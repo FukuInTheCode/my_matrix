@@ -17,7 +17,7 @@
 	  {
 		"label": "run",
 		"type": "shell",
-		"command": "Start-Process powershell -ArgumentList 'Measure-Command { ./out/${input:my_name}.exe ${input:my_args} | Out-Default } | ForEach-Object -Process { Write-Host Running Time: $_.TotalSeconds s}; pause'",
+		"command": "Start-Process powershell -ArgumentList 'Measure-Command { ./out/${input:my_name}.exe ${input:my_args} | Out-Host } | ForEach-Object -Process { Write-Host Running Time: $_.TotalSeconds s}; pause'",
 		"group": {
 		  "kind": "build",
 		  "isDefault": true
@@ -40,7 +40,8 @@
 		{
 			"id": "my_name",
 			"description": "name of the program (without .exe)",
-			"type": "promptString"
+			"type": "promptString",
+			"default": "my_matrix"
 
 		}
 	],

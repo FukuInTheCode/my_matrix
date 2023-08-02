@@ -1,4 +1,4 @@
-NAME = TBD
+NAME = my_matrix
 
 CFLAGS = -W -Wall -Wextra
 
