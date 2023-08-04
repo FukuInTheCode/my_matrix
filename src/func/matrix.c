@@ -2,24 +2,24 @@
 #include "../../includes/my.h"
 
 
-void my_Matrix_Print(my_Matrix* m) {
+void my_Matrix_Print(my_Matrix* A) {
     int i, j;
-    for(i=0; i<m->dimY; i++) {
-        for(j=0;j<m->dimX;j++) {
-            printf("%d ", m->arr[i][j]);
+    for(i=0; i<A->m; i++) {
+        for(j=0;j<A->n;j++) {
+            printf("%d ", A->arr[i][j]);
         }
         printf("\n");
     }
     printf("\n");
 }
 
-int* my_Matrix_GetRow(my_Matrix* m, int i) {
-    return m->arr[i];
+int* my_Matrix_GetRow(my_Matrix* A, int i) {
+    return A->arr[i];
 }
 
-void my_Matrix_GetColumn(my_Matrix* m, int n, int result[]) {
+void my_Matrix_GetColumn(my_Matrix* A, int n, int result[]) {
     int i;
-    for(i = 0; i<m->dimY; i++) {
-        result[i] = m->arr[i][n];
+    for(i = 0; i<A->m; i++) {
+        result[i] = A->arr[i][n];
     }
 }
