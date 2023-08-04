@@ -58,3 +58,17 @@ void my_Matrix_Copy(my_Matrix* m, my_Matrix* copy) {
         }
     }
 }
+
+void my_Matrix_Rand(my_Matrix* m, int min, int max) {
+    max++;
+    if(min>max) {
+        SWAP(min, max)
+    }
+    srand(time(NULL));
+    int i, j;
+    for(i = 0; i<m->dimY; i++) {
+        for(j = 0; j<m->dimY; j++) {
+            my_Matrix_Set(m, j, i, rand() % (max - min) + min);
+        }
+    }
+}

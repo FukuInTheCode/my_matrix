@@ -1,6 +1,8 @@
 #include "../../includes/my.h"
+#include <time.h>
+#include <stdlib.h>
 
-void my_Matrix_MultiplyByScalar(my_Matrix* m, int scalar) {
+void my_Matrix_MultiplyByScalar(my_Matrix* m, int scalar, my_Matrix* result) {
     int i, j;
     for(i = 0; i<m->dimY; i++) {
         for(j=0; j<m->dimY; j++) {
@@ -9,7 +11,7 @@ void my_Matrix_MultiplyByScalar(my_Matrix* m, int scalar) {
     }
 }
 
-void my_Matrix_Add(my_Matrix* m1, my_Matrix* m2) {
+void my_Matrix_Add(my_Matrix* m1, my_Matrix* m2, my_Matrix* result) {
     if(m1->dimX != m2->dimX || m1->dimY != m2->dimY) return;
     int i, j;
     for(i = 0; i<m1->dimY; i++) {
@@ -41,5 +43,23 @@ void my_Matrix_Product(my_Matrix* m1, my_Matrix* m2, my_Matrix* product) {
             int* row = my_Matrix_GetRow(m1, j);
             product->arr[j][i] = dot_product(row, column, m1->dimX);       
         }
+    }
+}
+
+void my_Matrix_PowerInt(my_Matrix* m, const unsigned int n, my_Matrix* result) {
+    if(n==0) {
+        my_Matrix_Identity(result);
+        return;
+    } else if(n == 1) {
+        my_Matrix_Copy(m, result);
+        return;
+    }
+
+    unsigned int i;
+    my_Matrix copy;
+    my_Matrix_Copy(m, &copy);
+    for(i=2; i<=n; i++) {
+        my_Matrix_Product(m, &copy, result);
+        my_Matrix_Copy(result, &copy);
     }
 }
