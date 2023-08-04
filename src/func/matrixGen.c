@@ -2,8 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void my_Matrix_Create(my_Matrix* m, int x, int y) {
+void my_Matrix_Free(my_Matrix* m) {
+    if(m->dimX == NULL || m->dimY == NULL || m->arr == NULL) return;
+    for (int i = 0; i < m->dimX; i++) {
+        free(m->arr[i]);
+    }
+    free(m->arr);
+}
 
+void my_Matrix_Create(my_Matrix* m, int x, int y) {
+    my_Matrix_Free(m);
     m->dimX = x;
     m->dimY = y;
     m->arr = (int**)malloc(y * sizeof(int*));
@@ -41,10 +49,3 @@ void my_Matrix_Identity(my_Matrix* m) {
     }
 }
 
-
-void my_Matrix_Free(my_Matrix* m) {
-    for (int i = 0; i < m->dimX; i++) {
-        free(m->arr[i]);
-    }
-    free(m->arr);
-}

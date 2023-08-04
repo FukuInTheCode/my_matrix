@@ -17,13 +17,13 @@
 	  {
 		"label": "run",
 		"type": "shell",
-		"command": "Start-Process powershell -ArgumentList 'Measure-Command { ./out/${input:my_name}.exe ${input:my_args} | Out-Host } | ForEach-Object -Process { Write-Host Running Time: $_.TotalSeconds s}; pause'",
+		"command": "Start-Process powershell -ArgumentList './out/${input:my_name}.exe ${input:my_args}; pause'; Measure-Command { ./out/${input:my_name}.exe ${input:my_args} } | ForEach-Object -Process { Write-Host Running Time: $_.TotalSeconds s}",
 		"group": {
 		  "kind": "build",
 		  "isDefault": true
 		},
 		"presentation": {
-		  "reveal": "never",
+		  "reveal": "always",
 		  "panel": "shared"
 		},
 		"dependsOrder": "sequence",

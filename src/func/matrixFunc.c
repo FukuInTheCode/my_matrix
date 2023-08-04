@@ -9,4 +9,5 @@ void my_Matrix_Print(my_Matrix* m) {
         }
         printf("\n");
     }
+    printf("\n");
 }
