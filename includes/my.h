@@ -13,3 +13,4 @@ void my_Matrix_Set(my_Matrix* m, int x, int y, int n);
 void my_Matrix_Print(my_Matrix* m);
 void my_Matrix_Free(my_Matrix* m);
 void my_Matrix_MultiplyByScalar(my_Matrix* m, int scalar);
+void my_Matrix_Add(my_Matrix* m1, my_Matrix* m2);
