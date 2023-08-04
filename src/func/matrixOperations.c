@@ -32,8 +32,22 @@ void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
     }
 }
 
-void my_Matrix_Product(my_Matrix* m1, my_Matrix* m2, my_Matrix* product) {
-    // ...
+void my_Matrix_Product(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
+    if(A->n != B->m) return;
+
+    my_Matrix_Create(result, A->m, B->n);
+
+    int i, j;
+    for(i=0; i<result->m; i++) {
+        int* row = my_Matrix_GetRow(A, i);
+        for(j=0;j<result->n; j++) {
+            int column[B->m];
+            my_Matrix_GetColumn(B, j, column);
+            my_Matrix_Set(result, i, j, dot_product(row, column, A->n));
+        }
+    } 
+
+
 }
 
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result) {

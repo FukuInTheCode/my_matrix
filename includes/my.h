@@ -23,7 +23,7 @@ void my_Matrix_Add(my_Matrix* A, my_Matrix* B, my_Matrix* result);
 void my_Matrix_T(my_Matrix* A, my_Matrix* T);
 void my_Matrix_GetColumn(my_Matrix* A, int n, int result[]);
 int* my_Matrix_GetRow(my_Matrix* A, int i);
-void my_Matrix_Product(my_Matrix* A, my_Matrix* B, my_Matrix* product);
+void my_Matrix_Product(my_Matrix* A, my_Matrix* B, my_Matrix* result);
 int dot_product(int* a, int* b, int size);
 void my_Matrix_Copy(my_Matrix* A, my_Matrix* copy);
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result);
