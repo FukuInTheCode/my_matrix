@@ -39,7 +39,7 @@ void my_Matrix_Product(my_Matrix* m1, my_Matrix* m2, my_Matrix* product) {
         my_Matrix_GetColumn(m2, i, column);
         for(j = 0; j<product->dimX; j++) {
             int* row = my_Matrix_GetRow(m1, j);
-            product->arr[j][i] = dot_product(row, column, m1->dimX);        
+            product->arr[j][i] = dot_product(row, column, m1->dimX);       
         }
     }
 }

@@ -48,3 +48,13 @@ void my_Matrix_Identity(my_Matrix* m) {
         my_Matrix_Set(m, i, i, 1);
     }
 }
+
+void my_Matrix_Copy(my_Matrix* m, my_Matrix* copy) {
+    my_Matrix_Create(copy, m->dimX, m->dimY);
+    int i, j;
+    for(i = 0; i<m->dimY; i++) {
+        for(j=0; j<m->dimX; j++) {
+            my_Matrix_Set(copy, j, i, m->arr[i][j]);
+        }
+    }
+}
