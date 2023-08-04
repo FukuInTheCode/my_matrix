@@ -15,3 +15,7 @@ void my_Matrix_Free(my_Matrix* m);
 void my_Matrix_MultiplyByScalar(my_Matrix* m, int scalar);
 void my_Matrix_Add(my_Matrix* m1, my_Matrix* m2);
 void my_Matrix_T(my_Matrix* m, my_Matrix* mT);
+void my_Matrix_GetColumn(my_Matrix* m, int n, int result[]);
+int* my_Matrix_GetRow(my_Matrix* m, int i);
+void my_Matrix_Product(my_Matrix* m1, my_Matrix* m2, my_Matrix* product);
+int dot_product(int* a, int* b, int size);

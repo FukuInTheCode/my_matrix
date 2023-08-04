@@ -28,3 +28,18 @@ void my_Matrix_T(my_Matrix* m, my_Matrix* mT) {
         }
     }
 }
+
+void my_Matrix_Product(my_Matrix* m1, my_Matrix* m2, my_Matrix* product) {
+    if(m1->dimX != m2->dimY) return;
+    my_Matrix_Create(product, m1->dimX, m2->dimY);
+
+    int i, j;
+    for(i = 0; i<product->dimY; i++) {
+        int column[m2->dimY];
+        my_Matrix_GetColumn(m2, i, column);
+        for(j = 0; j<product->dimX; j++) {
+            int* row = my_Matrix_GetRow(m1, j);
+            product->arr[j][i] = dot_product(row, column, m1->dimX);        
+        }
+    }
+}

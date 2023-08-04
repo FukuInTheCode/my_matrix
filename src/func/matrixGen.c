@@ -48,4 +48,3 @@ void my_Matrix_Identity(my_Matrix* m) {
         my_Matrix_Set(m, i, i, 1);
     }
 }
-
