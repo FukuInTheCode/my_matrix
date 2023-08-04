@@ -21,15 +21,26 @@ void my_Matrix_Create(my_Matrix* m, int x, int y) {
     }
 }
 
-void my_Matrix_Print(my_Matrix* m) {
+
+void my_Matrix_Set(my_Matrix* m, int x, int y, int n) {
+    if(0 > x  || x > m->dimX || 0 > y || y > m->dimY) return;
+
+    m->arr[y][x] = n;
+}
+
+void my_Matrix_Identity(my_Matrix* m) {
+    if(m->dimX != m->dimY) return;
     int i, j;
-    for(i=0; i<m->dimY; i++) {
-        for(j=0;j<m->dimX;j++) {
-            printf("%d ", m->arr[i][j]);
+    for(i = 0; i<m->dimY; i++) {
+        for(j = 0; j<m->dimX; j++) {
+            my_Matrix_Set(m, j, i, 0);
         }
-        printf("\n");
+    }
+    for(i = 0; i<m->dimX; i++) {
+        my_Matrix_Set(m, i, i, 1);
     }
 }
+
 
 void my_Matrix_Free(my_Matrix* m) {
     for (int i = 0; i < m->dimX; i++) {

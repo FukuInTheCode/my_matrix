@@ -3,3 +3,4 @@
 ./src/*.o
 
 ./src/func/*.o
+out/my_matrix.exe
