@@ -11,17 +11,6 @@ void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result) {
     }
 }
 
-void my_Matrix_Add(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
-    if(A->m != B->m || A->n != B->n) return;
-    my_Matrix_Copy(A, result);
-    int i, j;
-    for(i = 0; i<A->m; i++) {
-        for(j=0; j<A->n; j++) {;
-            result->arr[i][j] += B->arr[i][j];
-        }
-    }
-}
-
 void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
     my_Matrix_Create(T, A->n, A->m);
     int i, j;
