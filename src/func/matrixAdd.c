@@ -2,10 +2,10 @@
 
 
 
-int my_Matrix_Add_isValid(va_list args, const unsigned int count) {
+int __Matrix_Add_isValid(va_list args, const unsigned int count) {
     my_Matrix* A = va_arg(args, my_Matrix*);
-    int baseM = A->m;
-    int baseN = A->n;
+    unsigned int baseM = A->m;
+    unsigned int baseN = A->n;
     unsigned int i;
     for(i=0; i<count-1; i++) {
         A = va_arg(args, my_Matrix*);
@@ -15,12 +15,12 @@ int my_Matrix_Add_isValid(va_list args, const unsigned int count) {
 }
 
 
-void my_Matrix_Add(my_Matrix* result, const unsigned count, ...) {
+void my_Matrix_Add(my_Matrix* result, const unsigned int count, ...) {
     va_list args;
     va_list args_copy;
     va_copy(args_copy, args);
     va_start(args_copy, count);
-    if (my_Matrix_Add_isValid(args_copy, count) == 1) {
+    if (__Matrix_Add_isValid(args_copy, count) == 1) {
         va_end(args_copy);
         return;
     }

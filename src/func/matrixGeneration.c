@@ -3,13 +3,14 @@
 
 void my_Matrix_Free(my_Matrix* A) {
     if(A->m == 0 || A->n == 0 || A->arr == NULL) return;
-    for (int i = 0; i < A->m; i++) {
+    unsigned int i;
+    for (i = 0; i < A->m; i++) {
         free(A->arr[i]);
     }
     free(A->arr);
 }
 
-void my_Matrix_Create(my_Matrix* A, int m, int n) {
+void my_Matrix_Create(my_Matrix* A, unsigned int m, unsigned int n) {
     my_Matrix_Free(A);
     A->m = m;
     A->n = n;
@@ -18,7 +19,7 @@ void my_Matrix_Create(my_Matrix* A, int m, int n) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
     }
-    int i;
+    unsigned int i;
     for(i=0; i<m; i++) {
         A->arr[i] = (int*)calloc(n, sizeof(int));
         if (A->arr[i] == NULL) {
@@ -29,7 +30,7 @@ void my_Matrix_Create(my_Matrix* A, int m, int n) {
 }
 
 
-void my_Matrix_Set(my_Matrix* A, int x, int y, int n) {
+void my_Matrix_Set(my_Matrix* A, unsigned int x, unsigned int y, int n) {
     if(0 > x  || x > A->n || 0 > y || y > A->m) return;
 
     A->arr[y][x] = n;
@@ -37,7 +38,7 @@ void my_Matrix_Set(my_Matrix* A, int x, int y, int n) {
 
 void my_Matrix_Identity(my_Matrix* A) {
     if(A->m != A->n) return;
-    int i, j;
+    unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j = 0; j<A->n; j++) {
             my_Matrix_Set(A, j, i, 0);
@@ -50,7 +51,7 @@ void my_Matrix_Identity(my_Matrix* A) {
 
 void my_Matrix_Copy(my_Matrix* A, my_Matrix* copy) {
     my_Matrix_Create(copy, A->m, A->n);
-    int i, j;
+    unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j=0; j<A->n; j++) {
             my_Matrix_Set(copy, j, i, A->arr[i][j]);
@@ -63,7 +64,7 @@ void my_Matrix_Rand(my_Matrix* A, int min, int max) {
     if(min>max) {
         SWAP(min, max)
     }
-    int i, j;
+    unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j = 0; j<A->n; j++) {
             my_Matrix_Set(A, j, i, rand() % (max - min) + min);

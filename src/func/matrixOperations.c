@@ -2,7 +2,7 @@
 
 
 void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result) {
-    int i, j;
+    unsigned int i, j;
     my_Matrix_Copy(A, result);
     for(i = 0; i<A->m; i++) {
         for(j=0; j<A->n; j++) {
@@ -13,7 +13,7 @@ void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result) {
 
 void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
     my_Matrix_Create(T, A->n, A->m);
-    int i, j;
+    unsigned int i, j;
     for(i = 0; i< T->m; i++) {
         for(j = 0; j<T->n; j++) {
             T->arr[i][j] = A->arr[j][i];
@@ -21,25 +21,9 @@ void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
     }
 }
 
-void my_Matrix_Product(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
-    if(A->n != B->m) return;
-
-    my_Matrix_Create(result, A->m, B->n);
-
-    int i, j;
-    for(i=0; i<result->m; i++) {
-        int* row = my_Matrix_GetRow(A, i);
-        for(j=0;j<result->n; j++) {
-            int column[B->m];
-            my_Matrix_GetColumn(B, j, column);
-            my_Matrix_Set(result, i, j, dot_product(row, column, A->n));
-        }
-    } 
-
-
-}
 
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result) {
+    if(A->m != A->n) return;
     if(n==0) {
         my_Matrix_Identity(result);
         return;
@@ -52,7 +36,7 @@ void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result) {
     my_Matrix copy;
     my_Matrix_Copy(A, &copy);
     for(i=2; i<=n; i++) {
-        my_Matrix_Product(A, &copy, result);
+        my_Matrix_Product(result, 2, A, &copy);
         my_Matrix_Copy(result, &copy);
     }
 }
