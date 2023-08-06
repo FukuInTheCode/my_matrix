@@ -16,9 +16,6 @@ int main(int argc, char* argv[]) {
     my_Matrix_Print(&B);
     my_Matrix_Rand(&C, 0, 10);
     my_Matrix_Print(&C);
-    // my_Matrix_Create(&D, m, n);
-    // my_Matrix_Rand(&D, 0, 10);
-    // my_Matrix_Print(&D);
 
     printf("REsult:\n");
 
