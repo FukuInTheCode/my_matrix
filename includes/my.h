@@ -11,14 +11,14 @@
 typedef struct my_Matrix {
     unsigned int m;
     unsigned int n;
-    int** arr;
+    int **arr;
 } my_Matrix;
 
-void my_Matrix_Create(my_Matrix* A, unsigned int m, unsigned int n);
+void my_Matrix_Create(unsigned int m, unsigned int n, const unsigned int count, ...);
 void my_Matrix_Identity(my_Matrix* A);
 void my_Matrix_Set(my_Matrix* A, unsigned int x, unsigned int y, int n);
 void my_Matrix_Print(my_Matrix* A);
-void my_Matrix_Free(my_Matrix* A);
+void my_Matrix_Free(const unsigned int count, ...);
 void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result);
 void my_Matrix_Add(my_Matrix* result, const unsigned int count, ...);
 void my_Matrix_T(my_Matrix* A, my_Matrix* T);

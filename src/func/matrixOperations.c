@@ -12,7 +12,7 @@ void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result) {
 }
 
 void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
-    my_Matrix_Create(T, A->n, A->m);
+    my_Matrix_Create(A->n, A->m, 1, T);
     unsigned int i, j;
     for(i = 0; i< T->m; i++) {
         for(j = 0; j<T->n; j++) {
