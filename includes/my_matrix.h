@@ -8,7 +8,7 @@ typedef struct my_Matrix {
 } my_Matrix;
 
 void my_Matrix_Create(unsigned int m, unsigned int n, const unsigned int count, ...);
-void my_Matrix_Identity(my_Matrix* A);
+void my_Matrix_Identity(const unsigned int count, ...);
 void my_Matrix_Set(my_Matrix* A, unsigned int x, unsigned int y, int n);
 void my_Matrix_Print(const unsigned int count, ...);
 void my_Matrix_Free(const unsigned int count, ...);

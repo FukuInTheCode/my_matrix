@@ -4,6 +4,7 @@
         "my.h": "c",
         "matrixFunc.C": "cpp",
         "cstdarg": "c",
-        "limits": "c"
+        "limits": "c",
+        "matrixSet.C": "cpp"
     }
 }

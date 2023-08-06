@@ -21,7 +21,6 @@ void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
     }
 }
 
-
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result) {
     if(A->m != A->n) return;
     if(n==0) {
