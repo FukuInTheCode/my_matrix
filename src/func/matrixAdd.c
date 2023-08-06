@@ -35,11 +35,13 @@ void my_Matrix_Add(my_Matrix* result, const unsigned int count, ...) {
     }
     va_end(args_copy);
     va_start(args, count);
-    my_Matrix* A = va_arg(args, my_Matrix*); 
+    my_Matrix *A = va_arg(args, my_Matrix*);
+    my_Matrix_Create(A->m, A->n, 1, result);
     my_Matrix_Copy(A, result);
     unsigned int i;
     for(i=0; i < (count-1); i++) {
         A = va_arg(args, my_Matrix*);
         __Add(result, A);
     }
+    va_end(args);
 }

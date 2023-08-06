@@ -21,4 +21,5 @@ void my_Matrix_Free(const unsigned int count, ...) {
         if(__FreeisValid(A) == 84) continue;
         __Free(A);
     }
+    va_end(args);
 }

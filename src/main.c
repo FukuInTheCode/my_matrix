@@ -10,18 +10,32 @@ int main(int argc, char* argv[]) {
     my_Matrix result = {.m = 0, .n = 0};
 
     my_Matrix_Create(2, 2, 3, &A, &B, &C);
-    my_Matrix_Rand(&A, 0, 1);
+    my_Matrix_Rand(0, 10, 3, &A, &B, &C);
     my_Matrix_Print(&A);
-    my_Matrix_Rand(&B, 0, 1);
     my_Matrix_Print(&B);
-    my_Matrix_Rand(&C, 0, 10);
     my_Matrix_Print(&C);
 
-    printf("REsult:\n");
+    printf("Product:\n");
 
-    my_Matrix_Product(&result, 3, &B, &A, &C);
+    my_Matrix_Product(&result, 3, &A, &B, &C);
 
     my_Matrix_Print(&result);
+
+    my_Matrix_Print(&A);
+    my_Matrix_Print(&B);
+    my_Matrix_Print(&C);
+
+
+    printf("Sum:\n");
+
+    my_Matrix_Add(&result, 3, &A, &B, &C);
+
+    my_Matrix_Print(&result);
+
+    my_Matrix_Print(&A);
+    my_Matrix_Print(&B);
+    my_Matrix_Print(&C);
+
 
     my_Matrix_Free(4, &A, &B, &C, &result);
 

@@ -42,10 +42,12 @@ void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...) {
     va_end(args_copy);
     va_start(args, count);
     my_Matrix* A = va_arg(args, my_Matrix*);
+    my_Matrix copy = {.m = 0, .n = 0};
+    my_Matrix_Copy(A, &copy);
     unsigned int i;
     for(i=0; i < (count-1); i++) {
         my_Matrix* B = va_arg(args, my_Matrix*);
-        __Product(A, B, result);
-        my_Matrix_Copy(result, A);
+        __Product(&copy, B, result);
+        my_Matrix_Copy(result, &copy);
     }
 }

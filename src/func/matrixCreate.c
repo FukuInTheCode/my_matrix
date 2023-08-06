@@ -27,4 +27,5 @@ void my_Matrix_Create(unsigned int m, unsigned int n, const unsigned int count, 
         my_Matrix_Free(1, A);
         __Create(A, m, n);
     }
+    va_end(args);
 }

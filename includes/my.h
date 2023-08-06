@@ -28,4 +28,4 @@ void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...);
 int dot_product(int* a, int* b, unsigned int size);
 void my_Matrix_Copy(my_Matrix* A, my_Matrix* copy);
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result);
-void my_Matrix_Rand(my_Matrix* A, int min, int max);
+void my_Matrix_Rand(int min, int max, const unsigned int count, ...);
