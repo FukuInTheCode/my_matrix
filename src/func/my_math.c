@@ -8,3 +8,12 @@ int dot_product(int* a, int* b, unsigned int size) {
     }
     return result;
 }
+
+int my_power(int x, unsigned int n) {
+    int res = 1;
+    unsigned int i;
+    for(i=0; i<n; i++) {
+        res *= x;
+    }
+    return res;
+}
