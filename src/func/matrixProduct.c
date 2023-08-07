@@ -20,9 +20,9 @@ void __Product(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
 
     unsigned int i, j;
     for(i=0; i<result->m; i++) {
-        int* row = my_Matrix_GetRow(A, i);
+        double* row = my_Matrix_GetRow(A, i);
         for(j=0;j<result->n; j++) {
-            int column[B->m];
+            double column[B->m];
             my_Matrix_GetColumn(B, j, column);
             my_Matrix_Set(result, i, j, dot_product(row, column, A->n));
         }
@@ -50,4 +50,5 @@ void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...) {
         __Product(&copy, B, result);
         my_Matrix_Copy(result, &copy);
     }
+    my_Matrix_Free(1, &copy);
 }

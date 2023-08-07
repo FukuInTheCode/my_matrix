@@ -3,14 +3,14 @@
 void __Create(my_Matrix *A, unsigned int m, unsigned int n) {
     A->m = m;
     A->n = n;
-    A->arr = malloc(m * sizeof(int*));
+    A->arr = malloc(m * sizeof(double*));
     if (A->arr == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
     }
     unsigned int i;
     for(i=0; i<m; i++) {
-        A->arr[i] = calloc(n, sizeof(int));
+        A->arr[i] = calloc(n, sizeof(double));
         if (A->arr[i] == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
             exit(1);

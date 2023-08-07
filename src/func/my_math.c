@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-int dot_product(int* a, int* b, unsigned int size) {
+double dot_product(double* a, double* b, unsigned int size) {
     int result = 0;
     unsigned int i;
     for(i = 0; i<size; i++) {
@@ -9,7 +9,7 @@ int dot_product(int* a, int* b, unsigned int size) {
     return result;
 }
 
-int my_power(int x, unsigned int n) {
+double my_power(double x, unsigned int n) {
     int res = 1;
     unsigned int i;
     for(i=0; i<n; i++) {

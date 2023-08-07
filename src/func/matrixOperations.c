@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
 
-void my_Matrix_MultiplyByScalar(my_Matrix* A, int scalar, my_Matrix* result) {
+void my_Matrix_MultiplyByScalar(my_Matrix* A, double scalar, my_Matrix* result) {
     unsigned int i, j;
     my_Matrix_Copy(A, result);
     for(i = 0; i<A->m; i++) {

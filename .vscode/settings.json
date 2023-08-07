@@ -5,6 +5,7 @@
         "matrixFunc.C": "cpp",
         "cstdarg": "c",
         "limits": "c",
-        "matrixSet.C": "cpp"
+        "matrixSet.C": "cpp",
+        "stdio.h": "c"
     }
 }

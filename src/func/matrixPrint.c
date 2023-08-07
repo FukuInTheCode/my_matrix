@@ -6,7 +6,7 @@ void __Print(my_Matrix *A) {
     unsigned int j;
     for(i=0; i<A->m; i++) {
         for(j=0;j<A->n;j++) {
-            printf("%d ", A->arr[i][j]);
+            printf("%f ", A->arr[i][j]);
         }
         printf("\n");
     }

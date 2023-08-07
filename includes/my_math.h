@@ -3,5 +3,5 @@
 
 #include "my_matrix.h"
 
-int dot_product(int* a, int* b, unsigned int size);
-int my_power(int x, unsigned int n);
+double dot_product(double* a, double* b, unsigned int size);
+double my_power(double x, unsigned int n);
