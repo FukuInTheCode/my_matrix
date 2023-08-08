@@ -25,3 +25,4 @@ double my_Matrix_Det(my_Matrix *A);
 void my_Matrix_GetSubMatrix(my_Matrix *A, const unsigned int m, const unsigned int n, my_Matrix *result);
 void my_Matrix_Adjugate(my_Matrix *A, my_Matrix *result);
 void my_Matrix_Inverse(my_Matrix *A, my_Matrix *result);
+void my_Matrix_AddScalar(my_Matrix* A, double scalar, my_Matrix* result);

@@ -7,4 +7,4 @@
 #include <stdarg.h>
 #include "my_math.h"
 
-#define SWAP(A, B) A ^= B ^= A ^= B;
+#define SWAP(A, B)  double temp = minN; minN = maxN; maxN = temp;

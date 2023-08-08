@@ -17,3 +17,21 @@ double my_power(double x, unsigned int n) {
     }
     return res;
 }
+
+int my_randInt(int minN, int maxN) {
+    maxN++;
+    if(minN>maxN) {
+        SWAP(minN, maxN)
+    }
+    return rand() % (maxN - minN) + minN;
+}
+
+double my_randFloat(double minN, double maxN) {
+    maxN++;
+    if(minN>maxN) {
+        SWAP(minN, maxN)
+    }
+    double range = (maxN - minN); 
+    double div = RAND_MAX / range;
+    return minN + (rand() / div);
+}
