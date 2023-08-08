@@ -24,7 +24,7 @@
 		},
 		"presentation": {
 		  "reveal": "always",
-		  "panel": "shared"
+		  "panel": "new"
 		},
 		"dependsOrder": "sequence",
 		"dependsOn": "make"
@@ -35,7 +35,8 @@
 		{
 			"id": "my_args",
 			"description": "What are the arguments for the program?",
-			"type": "promptString"
+			"type": "promptString",
+			"default": ""
 		},
 		{
 			"id": "my_name",
