@@ -24,7 +24,7 @@ void my_Matrix_T(my_Matrix* A, my_Matrix* T) {
 void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result) {
     if(A->m != A->n) return;
     if(n==0) {
-        my_Matrix_Identity(result);
+        my_Matrix_Identity(1, result);
         return;
     } else if(n == 1) {
         my_Matrix_Copy(A, result);
@@ -53,7 +53,7 @@ void my_Matrix_Adjugate(my_Matrix *A, my_Matrix *result) {
         for(j=0; j<result->n; j++){
             my_Matrix sub = {.m=0, .n=0};
             my_Matrix_GetSubMatrix(A, i, j, &sub);
-            int cofactor = my_power(-1, i+j) * my_Matrix_Det(&sub);
+            double cofactor = my_power(-1, i+j) * my_Matrix_Det(&sub);
             my_Matrix_Set(result, i, j, cofactor);
             my_Matrix_Free(1, &sub);
         }
