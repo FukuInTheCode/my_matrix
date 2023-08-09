@@ -9,9 +9,9 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_Create(2, 2, 1, &A);
     my_Matrix_RandInt(1, 5, 1, &A);
-    my_Matrix_Create(2, 2, 1, &B);
-    my_Matrix_RandInt(1, 5, 1, &B);
     
+    my_Matrix_Inverse(&A, &B);
+
     my_Matrix_Print(2, &A, &B);
 
     my_Matrix_Product(&result, 2, &A, &B);
