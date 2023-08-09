@@ -14,8 +14,11 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_ApplyFunc(&A, timetwo, &result);
 
+
     my_Matrix_Print(2, &A, &result);
 
+    printf("%f, %f", my_Matrix_Sum(&A), my_Matrix_Sum(&result));
+    
     my_Matrix_Free(2, &A, &result);
 
     return 0;
