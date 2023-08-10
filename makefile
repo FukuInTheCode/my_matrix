@@ -3,7 +3,8 @@ NAME = my_matrix
 CFLAGS = -W -Wall -Wextra
 
 SRC = $(wildcard ./src/*.c) \
-		$(wildcard ./src/func/*.c)
+		$(wildcard ./src/func/*.c) \
+			$(wildcard ./src/libs/*.c)
 
 OBJ = $(SRC:.c=.o)
 
@@ -16,3 +17,4 @@ build: $(OBJ)
 clean:
 	@if exist ./src/*.o del /Q src\*.o
 	@if exist ./src/func/*.o del /Q src\func\*.o
+	@if exist ./src/libs/*.o del /Q src\libs\*.o
