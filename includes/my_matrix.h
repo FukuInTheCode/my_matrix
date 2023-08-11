@@ -37,3 +37,4 @@ void my_Matrix_One(my_Matrix *A, my_Matrix *result);
 void my_Matrix_AddCol(my_Matrix *A, const unsigned int n, my_Matrix *result);
 void my_Matrix_AddRow(my_Matrix *A, const unsigned int m, my_Matrix *result);
 void my_Matrix_ConcatCol(my_Matrix *result, my_Matrix *A, my_Matrix *B);
+void my_Matrix_ConcatRow(my_Matrix *result, my_Matrix *A, my_Matrix *B);

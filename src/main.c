@@ -15,9 +15,11 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_Copy(&A, &result);
 
-    my_Matrix_AddCol(&result, 1, &B);
+    my_Matrix_ConcatRow(&B, &A, &result);
 
-    my_Matrix_ConcatCol(&result, &A, &B);
+    my_Matrix_Copy(&B, &result);
+
+    my_Matrix_ConcatCol(&A, &B, &result);
 
     my_Matrix_Print(2, &A, &result);
 
