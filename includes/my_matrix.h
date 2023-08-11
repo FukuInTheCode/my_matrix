@@ -35,3 +35,4 @@ void my_Matrix_ApplyFunc(my_Matrix *A, UnaryFunction func, my_Matrix *result);
 double my_Matrix_Sum(my_Matrix *A);
 void my_Matrix_One(my_Matrix *A, my_Matrix *result);
 void my_Matrix_AddCol(my_Matrix *A, const unsigned int n, my_Matrix *result);
+void my_Matrix_AddRow(my_Matrix *A, const unsigned int m, my_Matrix *result);
