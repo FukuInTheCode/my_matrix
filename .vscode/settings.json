@@ -6,6 +6,7 @@
         "cstdarg": "c",
         "limits": "c",
         "matrixSet.C": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "my_math.h": "c"
     }
 }
