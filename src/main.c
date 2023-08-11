@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     my_Matrix B = {.m=0, .n=0};
 
     my_Matrix_Create(2, 2, 1, &A);
-    my_Matrix_RandInt(1, 10, 1, &A);
+    my_Matrix_RandInt(1, -10, 1, &A);
 
     my_Matrix_Copy(&A, &result);
 
