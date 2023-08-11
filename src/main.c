@@ -15,15 +15,15 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_Copy(&A, &result);
 
-    my_Matrix_ConcatRow(&B, &A, &result);
+    // my_Matrix_ConcatRow(&B, &A, &result);
 
-    my_Matrix_Copy(&B, &result);
+    // my_Matrix_Copy(&B, &result);
 
-    my_Matrix_ConcatCol(&A, &B, &result);
+    // my_Matrix_ConcatCol(&A, &B, &result);
 
     my_Matrix_Print(2, &A, &result);
 
-    printf("%f, %f", my_Matrix_Sum(&A), my_Matrix_Sum(&result));
+    printf("%f, %f, %d", my_Matrix_Sum(&A), my_Matrix_Sum(&result), my_Matrix_Equals(&A, &B));
 
     my_Matrix_Free(3, &A, &result, &B);
 
