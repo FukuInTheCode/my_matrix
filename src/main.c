@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
     my_Matrix_Create(2, 2, 1, &A);
     my_Matrix_RandInt(1, 10, 1, &A);
 
-    my_Matrix_One(&A, &result);
+    my_Matrix_AddCol(&A, 1, &result);
 
     my_Matrix_Print(2, &A, &result);
 
