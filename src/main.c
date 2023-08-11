@@ -13,8 +13,11 @@ int main(int argc, char* argv[]) {
     my_Matrix_Create(2, 2, 1, &A);
     my_Matrix_RandInt(1, 10, 1, &A);
 
-    my_Matrix_AddCol(&A, 1, &B);
-    my_Matrix_AddRow(&B, 1, &result);
+    my_Matrix_Copy(&A, &result);
+
+    my_Matrix_AddCol(&result, 1, &B);
+
+    my_Matrix_ConcatCol(&result, &A, &B);
 
     my_Matrix_Print(2, &A, &result);
 
