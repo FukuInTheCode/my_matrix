@@ -1,9 +1,5 @@
 #include "../includes/my.h"
 
-double __exp(double x) {
-    return my_exp(x, (int)(x*3));
-}
-
 int main(int argc, char* argv[]) {
     srand(time(NULL));
     my_Matrix A = {.m=0, .n=0};
@@ -13,7 +9,7 @@ int main(int argc, char* argv[]) {
     my_Matrix_Create(2, 2, 1, &A);
     my_Matrix_RandInt(1, -10, 1, &A);
 
-    my_Matrix_Copy(&A, &result);
+    my_Matrix_SwapRow(&A, 0, 1, &result);
 
     // my_Matrix_ConcatRow(&B, &A, &result);
 
