@@ -13,9 +13,11 @@ int main(int argc, char* argv[]) {
     my_Matrix_SetCol(&A, 0, 29);
 
     my_Matrix_SumRow(&A, &B);
-    my_Matrix_SumCol(&A, &C);
+    my_Matrix_SumCol(&B, &C);
 
-    my_Matrix_Print(3, &A, &B, &C);
+    my_Matrix_Broadcasting(&C, 10, 10, &T);
+
+    my_Matrix_Print(4, &A, &B, &C, &T);
 
     my_Matrix_Free(4, &A, &C, &B, &T);
 
