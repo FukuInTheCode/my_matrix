@@ -21,6 +21,7 @@ void __Add(my_Matrix* result, my_Matrix* A) {
             result->arr[i][j] += tmp.arr[i][j];
         }
     }
+    my_Matrix_Free(1, &tmp);
 }
 
 
