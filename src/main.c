@@ -8,11 +8,11 @@ int main(int argc, char* argv[]) {
     my_Matrix T = {.m=0, .n=0};
 
     my_Matrix_Create(2, 2, 1, &A);
-    my_Matrix_Create(1, 1, 1, &B);
+    my_Matrix_Create(1, 2, 1, &B);
     my_Matrix_RandInt(1, 10, 1, &A);
-    my_Matrix_RandFloat(0, 1, 1, &B);
+    my_Matrix_RandInt(1, 10, 1, &B);
 
-    my_Matrix_Add(&C, 2, &A, &B);
+    my_Matrix_ElementsMultiplication(&C, 2, &A, &B);
 
     printf("max = %f\n", my_Matrix_Max(&C));
     printf("min = %f\n", my_Matrix_Min(&C));

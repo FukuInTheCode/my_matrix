@@ -48,3 +48,4 @@ void my_Matrix_SetCol(my_Matrix *A, const unsigned int n, const double x);
 void my_Matrix_Broadcasting(my_Matrix *A, const unsigned int m, const unsigned int n, my_Matrix *result); 
 double my_Matrix_Max(my_Matrix *A);
 double my_Matrix_Min(my_Matrix *A);
+void my_Matrix_ElementsMultiplication(my_Matrix* result, const unsigned int count, ...);
