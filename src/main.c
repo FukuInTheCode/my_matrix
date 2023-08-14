@@ -10,6 +10,8 @@ int main(int argc, char* argv[]) {
     my_Matrix_Create(2, 2, 1, &A);
     my_Matrix_RandInt(1, 10, 1, &A);
 
+    my_Matrix_SetCol(&A, 0, 29);
+
     my_Matrix_SumRow(&A, &B);
     my_Matrix_SumCol(&A, &C);
 
