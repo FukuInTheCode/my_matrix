@@ -7,6 +7,8 @@
         "limits": "c",
         "matrixSet.C": "cpp",
         "stdio.h": "c",
-        "my_math.h": "c"
+        "my_math.h": "c",
+        "stdarg.h": "c",
+        "my_matrix.h": "c"
     }
 }

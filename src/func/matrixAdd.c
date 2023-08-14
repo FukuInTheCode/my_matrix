@@ -1,7 +1,5 @@
 #include "../../includes/my.h"
 
-
-
 int __AddisValid(va_list args, const unsigned int count) {
     my_Matrix* A = va_arg(args, my_Matrix*);
     unsigned int baseM = A->m;
