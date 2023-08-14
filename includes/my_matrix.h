@@ -42,3 +42,4 @@ int my_Matrix_Equals(my_Matrix *A, my_Matrix *B);
 void my_Matrix_SwapRow(my_Matrix *A, const unsigned int a, const unsigned int b, my_Matrix *result);
 void my_Matrix_SwapCol(my_Matrix *A, const unsigned int a, const unsigned int b, my_Matrix *result);
 void my_Matrix_SumCol(my_Matrix *A, my_Matrix *result);
+void my_Matrix_SumRow(my_Matrix *A, my_Matrix *result);
