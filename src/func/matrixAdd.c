@@ -7,16 +7,18 @@ int __AddisValid(va_list args, const unsigned int count) {
     unsigned int i;
     for(i=0; i<count-1; i++) {
         A = va_arg(args, my_Matrix*);
-        if(A->m != baseM || A->n != baseN) return 1;
+        if((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1)) return 1;
     }
     return 0;
 }
 
 void __Add(my_Matrix* result, my_Matrix* A) {
+    my_Matrix tmp = {.m=0, .n=0};
+    my_Matrix_Broadcasting(A, result->m, result->n, &tmp);
     unsigned int i, j;
     for(i=0; i<result->m; i++) {
         for(j=0; j<result->n; j++) {
-            result->arr[i][j] += A->arr[i][j];
+            result->arr[i][j] += tmp.arr[i][j];
         }
     }
 }

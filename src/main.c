@@ -8,14 +8,11 @@ int main(int argc, char* argv[]) {
     my_Matrix T = {.m=0, .n=0};
 
     my_Matrix_Create(2, 2, 1, &A);
+    my_Matrix_Create(1, 3, 1, &B);
     my_Matrix_RandInt(1, 10, 1, &A);
+    my_Matrix_RandFloat(0, 1, 1, &B);
 
-    my_Matrix_SetCol(&A, 0, 29);
-
-    my_Matrix_SumRow(&A, &B);
-    my_Matrix_SumCol(&B, &C);
-
-    my_Matrix_Broadcasting(&C, 10, 10, &T);
+    my_Matrix_Add(&C, 2, &A, &B);
 
     my_Matrix_Print(4, &A, &B, &C, &T);
 
