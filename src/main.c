@@ -14,7 +14,8 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_Add(&C, 2, &A, &B);
 
-    printf("%f\n", my_Matrix_Max(&C));
+    printf("max = %f\n", my_Matrix_Max(&C));
+    printf("min = %f\n", my_Matrix_Min(&C));
 
     my_Matrix_Print(4, &A, &B, &C, &T);
 
