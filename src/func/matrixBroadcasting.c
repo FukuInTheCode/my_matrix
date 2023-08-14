@@ -17,5 +17,5 @@ void my_Matrix_Broadcasting(my_Matrix *A, unsigned int m, unsigned int n, my_Mat
         for(i=0; i<A->n; i++) my_Matrix_SetCol(result, i, A->arr[0][i]);
     } else if(A->n == 1) {
         for(i=0; i<A->m; i++) my_Matrix_SetRow(result, i, A->arr[i][0]);
-    }
+    } else my_Matrix_Copy(A, result);
 }
