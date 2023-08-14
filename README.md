@@ -1,3 +1,3 @@
-## Basic Template for C project on Windows
+## With this repository you can play with matrices like with Numpy!!
 
-make your c code on the src folder, change the name of the NAME variable in the Makefile and run the task :)
+I wanted to recreate the Numpy library from python but in C to make my life harder.
