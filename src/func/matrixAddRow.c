@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
 void my_Matrix_AddRow(my_Matrix *A, const unsigned int m, my_Matrix *result) {
-    if(m > A->m) return;    
+    if(m > A->m) return;
     my_Matrix_Create(A->m + 1, A->n, 1, result);
     unsigned int i;
     unsigned int j;
