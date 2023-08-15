@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_Matrix_MultiplyByScalar(my_matrix* A, double scalar, my_matrix* result) {
+void my_matrix_multiplybyscalar(my_matrix* A, double scalar, my_matrix* result) {
     unsigned int i, j;
     my_matrix_copy(A, result);
     for(i = 0; i<A->m; i++) {

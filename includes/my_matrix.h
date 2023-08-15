@@ -17,7 +17,7 @@ void my_matrix_identity(const unsigned int count, ...);
 void my_matrix_set(my_matrix* A, unsigned int x, unsigned int y, double n);
 void my_Matrix_Print(const unsigned int count, ...);
 void my_matrix_free(const unsigned int count, ...);
-void my_Matrix_MultiplyByScalar(my_matrix* A, double scalar, my_matrix* result);
+void my_matrix_multiplybyscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_Matrix_Add(my_matrix* result, const unsigned int count, ...);
 void my_Matrix_T(my_matrix* A, my_matrix* T);
 void my_matrix_getcolumn(my_matrix* A, unsigned int n, double result[]);
@@ -31,8 +31,8 @@ void my_Matrix_RandFloat(double minN, double maxN, \
 double my_matrix_det(my_matrix *A);
 void my_matrix_getsubmatrix(my_matrix *A, \
     const unsigned int m, const unsigned int n, my_matrix *result);
-void my_Matrix_Adjugate(my_matrix *A, my_matrix *result);
-void my_Matrix_Inverse(my_matrix *A, my_matrix *result);
+void my_matrix_adjugate(my_matrix *A, my_matrix *result);
+void my_matrix_inverse(my_matrix *A, my_matrix *result);
 void my_matrix_addscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
 double my_Matrix_Sum(my_matrix *A);
@@ -52,11 +52,11 @@ void my_Matrix_SetRow(my_matrix *A, const unsigned int m, const double x);
 void my_matrix_setcol(my_matrix *A, const unsigned int n, const double x);
 void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
     const unsigned int n, my_matrix *result);
-double my_Matrix_Max(my_matrix *A);
+double my_matrix_max(my_matrix *A);
 double my_Matrix_Min(my_matrix *A);
 void my_matrix_product_elementwise(my_matrix* result,\
     const unsigned int count, ...);
-double my_Matrix_MaxCol(my_matrix *A, const unsigned int n);
-double my_Matrix_MaxRow(my_matrix *A, const unsigned int m);
+double my_matrix_maxcol(my_matrix *A, const unsigned int n);
+double my_matrix_maxrow(my_matrix *A, const unsigned int m);
 double my_Matrix_MinCol(my_matrix *A, const unsigned int n);
 double my_Matrix_MinRow(my_matrix *A, const unsigned int m);

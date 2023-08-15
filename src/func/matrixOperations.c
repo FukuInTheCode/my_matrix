@@ -30,7 +30,7 @@ void my_Matrix_PowerInt(my_matrix* A, const unsigned int n, my_matrix* result) {
     }
 }
 
-void my_Matrix_Adjugate(my_matrix *A, my_matrix *result) {
+void my_matrix_adjugate(my_matrix *A, my_matrix *result) {
     if(A->m != A->n) {
         fprintf(stderr, "Matrix is not a square matrix!");
         exit(1);
