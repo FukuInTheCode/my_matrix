@@ -20,10 +20,10 @@ void __Product(my_matrix* A, my_matrix* B, my_matrix* result) {
 
     unsigned int i, j;
     for(i=0; i<result->m; i++) {
-        double* row = my_Matrix_GetRow(A, i);
+        double* row = my_matrix_getrow(A, i);
         for(j=0;j<result->n; j++) {
             double column[B->m];
-            my_Matrix_GetColumn(B, j, column);
+            my_matrix_getcolumn(B, j, column);
             my_matrix_set(result, j, i, dot_product(row, column, A->n));
         }
     } 

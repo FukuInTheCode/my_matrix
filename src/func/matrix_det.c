@@ -14,7 +14,7 @@ double my_matrix_det(my_matrix *A)
         double sign = my_power(-1.0, i);
 
         my_matrix submatrix = {.m = 0, .n = 0};
-        my_Matrix_getsubmatrix(A, 0, i, &submatrix);
+        my_matrix_getsubmatrix(A, 0, i, &submatrix);
         det += sign * A->arr[0][i] * my_matrix_det(&submatrix);
         my_matrix_free(1, &submatrix);
     }
