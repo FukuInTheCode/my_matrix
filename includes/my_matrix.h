@@ -53,7 +53,7 @@ void my_matrix_setcol(my_matrix *A, const unsigned int n, const double x);
 void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
     const unsigned int n, my_matrix *result);
 double my_matrix_max(my_matrix *A);
-double my_Matrix_Min(my_matrix *A);
+double my_matrix_min(my_matrix *A);
 void my_matrix_product_elementwise(my_matrix* result,\
     const unsigned int count, ...);
 double my_matrix_maxcol(my_matrix *A, const unsigned int n);
