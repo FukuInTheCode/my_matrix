@@ -58,5 +58,5 @@ void my_matrix_product_elementwise(my_matrix* result,\
     const unsigned int count, ...);
 double my_matrix_maxcol(my_matrix *A, const unsigned int n);
 double my_matrix_maxrow(my_matrix *A, const unsigned int m);
-double my_Matrix_MinCol(my_matrix *A, const unsigned int n);
+double my_matrix_mincol(my_matrix *A, const unsigned int n);
 double my_Matrix_MinRow(my_matrix *A, const unsigned int m);
