@@ -52,3 +52,4 @@ void my_Matrix_ElementsMultiplication(my_Matrix* result, const unsigned int coun
 double my_Matrix_MaxCol(my_Matrix *A, const unsigned int n);
 double my_Matrix_MaxRow(my_Matrix *A, const unsigned int m);
 double my_Matrix_MinCol(my_Matrix *A, const unsigned int n);
+double my_Matrix_MinRow(my_Matrix *A, const unsigned int m);

@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     my_Matrix_ElementsMultiplication(&C, 2, &A, &B);
 
     printf("max = %f\n", my_Matrix_MaxRow(&C, 0));
-    printf("min = %f\n", my_Matrix_MinCol(&C, 0));
+    printf("min = %f\n", my_Matrix_MinRow(&C, 0));
 
     my_Matrix_Print(4, &A, &B, &C, &T);
 
