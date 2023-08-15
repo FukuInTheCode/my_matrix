@@ -59,4 +59,4 @@ void my_matrix_product_elementwise(my_matrix* result,\
 double my_matrix_maxcol(my_matrix *A, const unsigned int n);
 double my_matrix_maxrow(my_matrix *A, const unsigned int m);
 double my_matrix_mincol(my_matrix *A, const unsigned int n);
-double my_Matrix_MinRow(my_matrix *A, const unsigned int m);
+double my_matrix_minrow(my_matrix *A, const unsigned int m);
