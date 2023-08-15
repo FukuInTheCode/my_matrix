@@ -5,7 +5,7 @@ int __AddisValid(va_list args, const unsigned int count) {
     unsigned int baseM = A->m;
     unsigned int baseN = A->n;
     unsigned int i;
-    for(i=0; i<count-1; i++) {
+    for (i = 0; i<count-1; i++) {
         A = va_arg(args, my_Matrix*);
         if((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1)) return 1;
     }
