@@ -13,7 +13,7 @@ typedef double (*UnaryFunction)(double);
 
 void my_matrix_create(unsigned int m, unsigned int n, \
     const unsigned int count, ...);
-void my_Matrix_Identity(const unsigned int count, ...);
+void my_matrix_identity(const unsigned int count, ...);
 void my_matrix_set(my_matrix* A, unsigned int x, unsigned int y, double n);
 void my_Matrix_Print(const unsigned int count, ...);
 void my_matrix_free(const unsigned int count, ...);
