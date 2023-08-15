@@ -41,7 +41,7 @@ void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
 void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
 void my_matrix_concatcol(my_matrix *result, my_matrix *A, my_matrix *B);
 void my_matrix_concatrow(my_matrix *result, my_matrix *A, my_matrix *B);
-int my_Matrix_Equals(my_matrix *A, my_matrix *B);
+int my_matrix_equals(my_matrix *A, my_matrix *B);
 void my_Matrix_SwapRow(my_matrix *A, const unsigned int a, \
     const unsigned int b, my_matrix *result);
 void my_Matrix_SwapCol(my_matrix *A, const unsigned int a,\
@@ -54,7 +54,7 @@ void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
     const unsigned int n, my_matrix *result);
 double my_Matrix_Max(my_matrix *A);
 double my_Matrix_Min(my_matrix *A);
-void my_Matrix_ElementsMultiplication(my_matrix* result,\
+void my_matrix_product_elementwise(my_matrix* result,\
     const unsigned int count, ...);
 double my_Matrix_MaxCol(my_matrix *A, const unsigned int n);
 double my_Matrix_MaxRow(my_matrix *A, const unsigned int m);

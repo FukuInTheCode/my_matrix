@@ -10,9 +10,9 @@
 
 static inline __attribute__((always_inline)) void swap(double *a, double *b)
 {
-    const temp = &a;
-    &a = &b;
-    &b = temp;
+    const int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 #define SWAP(A, B) swap(&A, &B);
