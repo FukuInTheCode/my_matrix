@@ -19,12 +19,12 @@ void my_Matrix_Print(const unsigned int count, ...);
 void my_matrix_free(const unsigned int count, ...);
 void my_matrix_multiplybyscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_Matrix_Add(my_matrix* result, const unsigned int count, ...);
-void my_Matrix_T(my_matrix* A, my_matrix* T);
+void my_matrix_transpose(my_matrix* A, my_matrix* T);
 void my_matrix_getcolumn(my_matrix* A, unsigned int n, double result[]);
 double* my_matrix_getrow(my_matrix* A, unsigned int i);
 void my_Matrix_Product(my_matrix* result, const unsigned int count, ...);
 void my_matrix_copy(my_matrix* A, my_matrix* copy);
-void my_Matrix_PowerInt(my_matrix* A, const unsigned int n, my_matrix* result);
+void my_matrix_powerint(my_matrix* A, const unsigned int n, my_matrix* result);
 void my_Matrix_RandInt(int minN, int maxN, const unsigned int count, ...);
 void my_Matrix_RandFloat(double minN, double maxN, \
     const unsigned int count, ...);
