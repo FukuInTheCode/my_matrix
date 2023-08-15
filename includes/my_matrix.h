@@ -36,7 +36,7 @@ void my_matrix_inverse(my_matrix *A, my_matrix *result);
 void my_matrix_addscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
 double my_Matrix_Sum(my_matrix *A);
-void my_Matrix_One(my_matrix *A, my_matrix *result);
+void my_matrix_one(my_matrix *A, my_matrix *result);
 void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
 void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
 void my_matrix_concatcol(my_matrix *result, my_matrix *A, my_matrix *B);
