@@ -15,7 +15,7 @@ void my_matrix_create(unsigned int m, unsigned int n, \
     const unsigned int count, ...);
 void my_matrix_identity(const unsigned int count, ...);
 void my_matrix_set(my_matrix* A, unsigned int x, unsigned int y, double n);
-void my_Matrix_Print(const unsigned int count, ...);
+void my_matrix_print(const unsigned int count, ...);
 void my_matrix_free(const unsigned int count, ...);
 void my_matrix_multiplybyscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_Matrix_Add(my_matrix* result, const unsigned int count, ...);
