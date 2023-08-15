@@ -14,14 +14,14 @@ int __MultiplicationisValid(va_list args, const unsigned int count) {
 
 void __Multiply(my_matrix* result, my_matrix* A) {
     my_matrix tmp = {.m=0, .n=0};
-    my_Matrix_Broadcasting(A, result->m, result->n, &tmp);
+    my_matrix_broadcasting(A, result->m, result->n, &tmp);
     unsigned int i, j;
     for(i=0; i<result->m; i++) {
         for(j=0; j<result->n; j++) {
             result->arr[i][j] *= tmp.arr[i][j];
         }
     }
-    my_Matrix_Free(1, &tmp);
+    my_matrix_free(1, &tmp);
 }
 
 

@@ -24,7 +24,7 @@ void my_matrix_create(unsigned int m, unsigned int n, const unsigned int count, 
     unsigned int i;
     for(i=0; i<count; i++) {
         my_matrix *A = va_arg(args, my_matrix *);
-        my_Matrix_Free(1, A);
+        my_matrix_free(1, A);
         __Create(A, m, n);
     }
     va_end(args);

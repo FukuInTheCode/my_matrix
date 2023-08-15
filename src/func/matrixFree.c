@@ -12,7 +12,7 @@ int __FreeisValid(my_matrix* A) {
     return (A->m == 0 || A->n == 0 || A->arr == NULL) ? 84: 0;
 }
 
-void my_Matrix_Free(const unsigned int count, ...) {
+void my_matrix_free(const unsigned int count, ...) {
     va_list args;
     va_start(args, count);
     unsigned int i;

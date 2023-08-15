@@ -18,5 +18,5 @@ void my_Matrix_Inverse(my_matrix *A, my_matrix *result) {
 
     my_Matrix_MultiplyByScalar(&Adjoint, 1/det, result);
 
-    my_Matrix_Free(1, &Adjoint);
+    my_matrix_free(1, &Adjoint);
 }

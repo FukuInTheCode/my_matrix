@@ -16,7 +16,7 @@ void my_matrix_create(unsigned int m, unsigned int n, \
 void my_Matrix_Identity(const unsigned int count, ...);
 void my_matrix_set(my_matrix* A, unsigned int x, unsigned int y, double n);
 void my_Matrix_Print(const unsigned int count, ...);
-void my_Matrix_Free(const unsigned int count, ...);
+void my_matrix_free(const unsigned int count, ...);
 void my_Matrix_MultiplyByScalar(my_matrix* A, double scalar, my_matrix* result);
 void my_Matrix_Add(my_matrix* result, const unsigned int count, ...);
 void my_Matrix_T(my_matrix* A, my_matrix* T);
@@ -33,7 +33,7 @@ void my_Matrix_GetSubMatrix(my_matrix *A, \
     const unsigned int m, const unsigned int n, my_matrix *result);
 void my_Matrix_Adjugate(my_matrix *A, my_matrix *result);
 void my_Matrix_Inverse(my_matrix *A, my_matrix *result);
-void my_Matrix_AddScalar(my_matrix* A, double scalar, my_matrix* result);
+void my_matrix_addscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
 double my_Matrix_Sum(my_matrix *A);
 void my_Matrix_One(my_matrix *A, my_matrix *result);
@@ -49,8 +49,8 @@ void my_Matrix_SwapCol(my_matrix *A, const unsigned int a,\
 void my_Matrix_SumCol(my_matrix *A, my_matrix *result);
 void my_Matrix_SumRow(my_matrix *A, my_matrix *result);
 void my_Matrix_SetRow(my_matrix *A, const unsigned int m, const double x);
-void my_Matrix_SetCol(my_matrix *A, const unsigned int n, const double x);
-void my_Matrix_Broadcasting(my_matrix *A, const unsigned int m, \
+void my_matrix_setcol(my_matrix *A, const unsigned int n, const double x);
+void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
     const unsigned int n, my_matrix *result);
 double my_Matrix_Max(my_matrix *A);
 double my_Matrix_Min(my_matrix *A);

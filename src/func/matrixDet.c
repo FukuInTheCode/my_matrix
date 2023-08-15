@@ -13,7 +13,7 @@ double my_Matrix_Det(my_matrix *A) {
         my_Matrix_GetSubMatrix(A, 0, i, &subMatrix);
         double sign = my_power(-1.0, i);
         det += sign * A->arr[0][i] * my_Matrix_Det(&subMatrix);
-        my_Matrix_Free(1, &subMatrix);
+        my_matrix_free(1, &subMatrix);
     }
    
     return det;

@@ -50,5 +50,5 @@ void my_Matrix_Product(my_matrix* result, const unsigned int count, ...) {
         __Product(&copy, B, result);
         my_matrix_copy(result, &copy);
     }
-    my_Matrix_Free(1, &copy);
+    my_matrix_free(1, &copy);
 }

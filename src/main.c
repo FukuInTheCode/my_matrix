@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 
     my_Matrix_Print(4, &A, &B, &C, &T);
 
-    my_Matrix_Free(4, &A, &C, &B, &T);
+    my_matrix_free(4, &A, &C, &B, &T);
 
     return 0;
 }
