@@ -7,8 +7,15 @@
 #include <stdarg.h>
 #include "my_matrix.h"
 
-#define SWAP(A, B)  double temp = A; A = B; B = temp;
+
+static inline __attribute__((always_inline)) void swap(double *a, double *b)
+{
+    const temp = &a;
+    &a = &b;
+    &b = temp;
+}
+
+#define SWAP(A, B) swap(&A, &B);
 
 #define FALSE 0
 #define TRUE 1
-
