@@ -14,7 +14,7 @@ typedef double (*UnaryFunction)(double);
 void my_matrix_create(unsigned int m, unsigned int n, \
     const unsigned int count, ...);
 void my_Matrix_Identity(const unsigned int count, ...);
-void my_Matrix_Set(my_matrix* A, unsigned int x, unsigned int y, double n);
+void my_matrix_set(my_matrix* A, unsigned int x, unsigned int y, double n);
 void my_Matrix_Print(const unsigned int count, ...);
 void my_Matrix_Free(const unsigned int count, ...);
 void my_Matrix_MultiplyByScalar(my_matrix* A, double scalar, my_matrix* result);

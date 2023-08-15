@@ -9,7 +9,7 @@ void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result)
 
     for ( i = 0; i < result->m; i++) {
         for (j = 0; j < result->n; j++) {
-            my_Matrix_Set(result, j, i, func(result->arr[i][j]));
+            my_matrix_set(result, j, i, func(result->arr[i][j]));
         }
     }
 }

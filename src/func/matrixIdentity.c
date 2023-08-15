@@ -5,11 +5,11 @@ void __Identity(my_matrix *A) {
     unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j = 0; j<A->n; j++) {
-            my_Matrix_Set(A, j, i, 0);
+            my_matrix_set(A, j, i, 0);
         }
     }
     for(i = 0; i<A->m; i++) {
-        my_Matrix_Set(A, i, i, 1);
+        my_matrix_set(A, i, i, 1);
     }
 }
 

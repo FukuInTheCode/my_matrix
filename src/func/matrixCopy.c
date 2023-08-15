@@ -5,7 +5,7 @@ void my_matrix_copy(my_matrix* A, my_matrix* copy) {
     unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j=0; j<A->n; j++) {
-            my_Matrix_Set(copy, j, i, A->arr[i][j]);
+            my_matrix_set(copy, j, i, A->arr[i][j]);
         }
     }
 }

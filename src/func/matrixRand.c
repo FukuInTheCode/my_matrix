@@ -4,7 +4,7 @@ void __RandFloat(my_matrix *A, double minN, double maxN) {
     unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j = 0; j<A->n; j++) {
-            my_Matrix_Set(A, j, i, my_randFloat(minN, maxN));
+            my_matrix_set(A, j, i, my_randFloat(minN, maxN));
         }
     }
 }
@@ -24,7 +24,7 @@ void __RandInt(my_matrix *A, int minN, int maxN) {
     unsigned int i, j;
     for(i = 0; i<A->m; i++) {
         for(j = 0; j<A->n; j++) {
-            my_Matrix_Set(A, j, i, my_randInt(minN, maxN));
+            my_matrix_set(A, j, i, my_randInt(minN, maxN));
         }
     }
 }
