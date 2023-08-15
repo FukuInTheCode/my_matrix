@@ -8,13 +8,12 @@ double my_Matrix_Det(my_matrix *A) {
 
     double det = 0;
     unsigned int i;
-    for(i=0; i<A->n; i++){
+    for (i = 0; i<A->n; i++){
         my_matrix subMatrix = {.m=0, .n=0};
         my_Matrix_GetSubMatrix(A, 0, i, &subMatrix);
         double sign = my_power(-1.0, i);
         det += sign * A->arr[0][i] * my_Matrix_Det(&subMatrix);
         my_matrix_free(1, &subMatrix);
     }
-   
     return det;
 }
