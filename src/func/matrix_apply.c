@@ -1,0 +1,15 @@
+#include "../../includes/my.h"
+
+void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result)
+{
+    unsigned int i;
+    unsigned int j;
+
+    my_matrix_copy(A, result);
+
+    for ( i = 0; i < result->m; i++) {
+        for (j = 0; j < result->n; j++) {
+            my_Matrix_Set(result, j, i, func(result->arr[i][j]));
+        }
+    }
+}

@@ -2,21 +2,21 @@
 
 
 int __ProductisValid(va_list args, const unsigned int count) {
-    my_Matrix* A = va_arg(args, my_Matrix*);
+    my_matrix* A = va_arg(args, my_matrix*);
     unsigned int insideN = A->n;
     unsigned int i;
     for(i=0; i<(count-1); i++) {
-        A = va_arg(args, my_Matrix*);
+        A = va_arg(args, my_matrix*);
         if(A->m != insideN) return 1;
         insideN = A->n;
     }
     return 0;
 }
 
-void __Product(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
+void __Product(my_matrix* A, my_matrix* B, my_matrix* result) {
     if(A->n != B->m) return;
 
-    my_Matrix_Create(A->m, B->n, 1, result);
+    my_matrix_create(A->m, B->n, 1, result);
 
     unsigned int i, j;
     for(i=0; i<result->m; i++) {
@@ -30,7 +30,7 @@ void __Product(my_Matrix* A, my_Matrix* B, my_Matrix* result) {
 }
 
 
-void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...) {
+void my_Matrix_Product(my_matrix* result, const unsigned int count, ...) {
     va_list args;
     va_list args_copy;
     va_copy(args_copy, args);
@@ -41,14 +41,14 @@ void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...) {
     }
     va_end(args_copy);
     va_start(args, count);
-    my_Matrix* A = va_arg(args, my_Matrix*);
-    my_Matrix copy = {.m = 0, .n = 0};
-    my_Matrix_Copy(A, &copy);
+    my_matrix* A = va_arg(args, my_matrix*);
+    my_matrix copy = {.m = 0, .n = 0};
+    my_matrix_copy(A, &copy);
     unsigned int i;
     for(i=0; i < (count-1); i++) {
-        my_Matrix* B = va_arg(args, my_Matrix*);
+        my_matrix* B = va_arg(args, my_matrix*);
         __Product(&copy, B, result);
-        my_Matrix_Copy(result, &copy);
+        my_matrix_copy(result, &copy);
     }
     my_Matrix_Free(1, &copy);
 }

@@ -5,6 +5,6 @@ double __setOne(double x) {
     return x/x;
 }
 
-void my_Matrix_One(my_Matrix *A, my_Matrix *result) {
-    my_Matrix_ApplyFunc(A, __setOne, result);
+void my_Matrix_One(my_matrix *A, my_matrix *result) {
+    my_matrix_applyfunc(A, __setOne, result);
 }

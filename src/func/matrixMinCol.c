@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_Matrix_MinCol(my_Matrix *A, const unsigned int n) {
+double my_Matrix_MinCol(my_matrix *A, const unsigned int n) {
     if(n >= A->n) {
         fprintf(stderr, "Column index too high!\n");
         exit(1);

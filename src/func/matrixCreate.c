@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void __Create(my_Matrix *A, unsigned int m, unsigned int n) {
+void __Create(my_matrix *A, unsigned int m, unsigned int n) {
     A->m = m;
     A->n = n;
     A->arr = malloc(m * sizeof(double*));
@@ -18,12 +18,12 @@ void __Create(my_Matrix *A, unsigned int m, unsigned int n) {
     }
 }
 
-void my_Matrix_Create(unsigned int m, unsigned int n, const unsigned int count, ...) {
+void my_matrix_create(unsigned int m, unsigned int n, const unsigned int count, ...) {
     va_list args;
     va_start(args, count);
     unsigned int i;
     for(i=0; i<count; i++) {
-        my_Matrix *A = va_arg(args, my_Matrix *);
+        my_matrix *A = va_arg(args, my_matrix *);
         my_Matrix_Free(1, A);
         __Create(A, m, n);
     }

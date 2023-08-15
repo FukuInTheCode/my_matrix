@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void __Identity(my_Matrix *A) {
+void __Identity(my_matrix *A) {
     if(A->m != A->n) return;
     unsigned int i, j;
     for(i = 0; i<A->m; i++) {
@@ -18,7 +18,7 @@ void my_Matrix_Identity(const unsigned int count, ...) {
     va_start(args, count);
     unsigned int i;
     for(i=0; i<count ;i++) {
-        my_Matrix *A = va_arg(args, my_Matrix *);
+        my_matrix *A = va_arg(args, my_matrix *);
         __Identity(A);
     }
     va_end(args);

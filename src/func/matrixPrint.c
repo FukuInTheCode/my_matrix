@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void __Print(my_Matrix *A) {
+void __Print(my_matrix *A) {
     if(A->m == 0 || A->n == 0) return;
     unsigned int i;
     unsigned int j;
@@ -18,7 +18,7 @@ void my_Matrix_Print(const unsigned int count, ...) {
     va_start(args, count);
     unsigned int i;
     for(i=0;i<count;i++) {
-        my_Matrix *A = va_arg(args, my_Matrix *);
+        my_matrix *A = va_arg(args, my_matrix *);
         __Print(A);
     }
     va_end(args);

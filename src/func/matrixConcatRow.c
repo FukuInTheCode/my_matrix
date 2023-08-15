@@ -1,8 +1,8 @@
 #include "../../includes/my.h"
 
-void my_Matrix_ConcatRow(my_Matrix *result, my_Matrix *A, my_Matrix *B) {
+void my_Matrix_ConcatRow(my_matrix *result, my_matrix *A, my_matrix *B) {
     if(A->n != B->n) return;
-    my_Matrix_Create(A->m + B->m, A->n, 1, result);
+    my_matrix_create(A->m + B->m, A->n, 1, result);
     unsigned int i;
     unsigned int j;
     for(i=0; i<result->n; i++) {

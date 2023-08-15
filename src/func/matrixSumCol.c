@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
-void my_Matrix_SumCol(my_Matrix *A, my_Matrix *result) {
-    my_Matrix_Create(1, A->n, 1, result);
+void my_Matrix_SumCol(my_matrix *A, my_matrix *result) {
+    my_matrix_create(1, A->n, 1, result);
     unsigned int i;
     unsigned int j;
     double sum;

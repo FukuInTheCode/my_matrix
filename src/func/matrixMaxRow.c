@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_Matrix_MaxRow(my_Matrix *A, const unsigned int m) {
+double my_Matrix_MaxRow(my_matrix *A, const unsigned int m) {
     if(m >= A->m) {
         fprintf(stderr, "Row index too high!\n");
         exit(1);

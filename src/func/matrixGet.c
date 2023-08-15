@@ -2,19 +2,19 @@
 #include "../../includes/my.h"
 
 
-double* my_Matrix_GetRow(my_Matrix* A, unsigned int i) {
+double* my_Matrix_GetRow(my_matrix* A, unsigned int i) {
     return A->arr[i];
 }
 
-void my_Matrix_GetColumn(my_Matrix* A, unsigned int n, double result[]) {
+void my_Matrix_GetColumn(my_matrix* A, unsigned int n, double result[]) {
     unsigned int i;
     for(i = 0; i<A->m; i++) {
         result[i] = A->arr[i][n];
     }
 }
 
-void my_Matrix_GetSubMatrix(my_Matrix *A, const unsigned int m, const unsigned int n, my_Matrix *result) {
-    my_Matrix_Create(A->m - 1, A->n - 1, 1, result);
+void my_Matrix_GetSubMatrix(my_matrix *A, const unsigned int m, const unsigned int n, my_matrix *result) {
+    my_matrix_create(A->m - 1, A->n - 1, 1, result);
     unsigned int i;
     unsigned int j;
     unsigned int i2 = 0;

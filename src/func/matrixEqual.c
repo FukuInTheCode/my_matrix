@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-int my_Matrix_Equals(my_Matrix *A, my_Matrix *B) {
+int my_Matrix_Equals(my_matrix *A, my_matrix *B) {
     if(A->m != B->m || A->n != B->n) return FALSE;
     unsigned int i;
     unsigned int j;

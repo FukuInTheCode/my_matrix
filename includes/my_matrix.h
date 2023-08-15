@@ -3,60 +3,60 @@
 
 #include "./my_math.h"
 
-typedef struct my_Matrix {
+typedef struct my_matrix {
     unsigned int m;
     unsigned int n;
     double **arr;
-} my_Matrix;
+} my_matrix;
 
 typedef double (*UnaryFunction)(double);
 
-void my_Matrix_Create(unsigned int m, unsigned int n, \
+void my_matrix_create(unsigned int m, unsigned int n, \
     const unsigned int count, ...);
 void my_Matrix_Identity(const unsigned int count, ...);
-void my_Matrix_Set(my_Matrix* A, unsigned int x, unsigned int y, double n);
+void my_Matrix_Set(my_matrix* A, unsigned int x, unsigned int y, double n);
 void my_Matrix_Print(const unsigned int count, ...);
 void my_Matrix_Free(const unsigned int count, ...);
-void my_Matrix_MultiplyByScalar(my_Matrix* A, double scalar, my_Matrix* result);
-void my_Matrix_Add(my_Matrix* result, const unsigned int count, ...);
-void my_Matrix_T(my_Matrix* A, my_Matrix* T);
-void my_Matrix_GetColumn(my_Matrix* A, unsigned int n, double result[]);
-double* my_Matrix_GetRow(my_Matrix* A, unsigned int i);
-void my_Matrix_Product(my_Matrix* result, const unsigned int count, ...);
-void my_Matrix_Copy(my_Matrix* A, my_Matrix* copy);
-void my_Matrix_PowerInt(my_Matrix* A, const unsigned int n, my_Matrix* result);
+void my_Matrix_MultiplyByScalar(my_matrix* A, double scalar, my_matrix* result);
+void my_Matrix_Add(my_matrix* result, const unsigned int count, ...);
+void my_Matrix_T(my_matrix* A, my_matrix* T);
+void my_Matrix_GetColumn(my_matrix* A, unsigned int n, double result[]);
+double* my_Matrix_GetRow(my_matrix* A, unsigned int i);
+void my_Matrix_Product(my_matrix* result, const unsigned int count, ...);
+void my_matrix_copy(my_matrix* A, my_matrix* copy);
+void my_Matrix_PowerInt(my_matrix* A, const unsigned int n, my_matrix* result);
 void my_Matrix_RandInt(int minN, int maxN, const unsigned int count, ...);
 void my_Matrix_RandFloat(double minN, double maxN, \
     const unsigned int count, ...);
-double my_Matrix_Det(my_Matrix *A);
-void my_Matrix_GetSubMatrix(my_Matrix *A, \
-    const unsigned int m, const unsigned int n, my_Matrix *result);
-void my_Matrix_Adjugate(my_Matrix *A, my_Matrix *result);
-void my_Matrix_Inverse(my_Matrix *A, my_Matrix *result);
-void my_Matrix_AddScalar(my_Matrix* A, double scalar, my_Matrix* result);
-void my_Matrix_ApplyFunc(my_Matrix *A, UnaryFunction func, my_Matrix *result);
-double my_Matrix_Sum(my_Matrix *A);
-void my_Matrix_One(my_Matrix *A, my_Matrix *result);
-void my_Matrix_AddCol(my_Matrix *A, const unsigned int n, my_Matrix *result);
-void my_Matrix_AddRow(my_Matrix *A, const unsigned int m, my_Matrix *result);
-void my_Matrix_ConcatCol(my_Matrix *result, my_Matrix *A, my_Matrix *B);
-void my_Matrix_ConcatRow(my_Matrix *result, my_Matrix *A, my_Matrix *B);
-int my_Matrix_Equals(my_Matrix *A, my_Matrix *B);
-void my_Matrix_SwapRow(my_Matrix *A, const unsigned int a, \
-    const unsigned int b, my_Matrix *result);
-void my_Matrix_SwapCol(my_Matrix *A, const unsigned int a,\
-    const unsigned int b, my_Matrix *result);
-void my_Matrix_SumCol(my_Matrix *A, my_Matrix *result);
-void my_Matrix_SumRow(my_Matrix *A, my_Matrix *result);
-void my_Matrix_SetRow(my_Matrix *A, const unsigned int m, const double x);
-void my_Matrix_SetCol(my_Matrix *A, const unsigned int n, const double x);
-void my_Matrix_Broadcasting(my_Matrix *A, const unsigned int m, \
-    const unsigned int n, my_Matrix *result);
-double my_Matrix_Max(my_Matrix *A);
-double my_Matrix_Min(my_Matrix *A);
-void my_Matrix_ElementsMultiplication(my_Matrix* result,\
+double my_Matrix_Det(my_matrix *A);
+void my_Matrix_GetSubMatrix(my_matrix *A, \
+    const unsigned int m, const unsigned int n, my_matrix *result);
+void my_Matrix_Adjugate(my_matrix *A, my_matrix *result);
+void my_Matrix_Inverse(my_matrix *A, my_matrix *result);
+void my_Matrix_AddScalar(my_matrix* A, double scalar, my_matrix* result);
+void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
+double my_Matrix_Sum(my_matrix *A);
+void my_Matrix_One(my_matrix *A, my_matrix *result);
+void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
+void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
+void my_Matrix_ConcatCol(my_matrix *result, my_matrix *A, my_matrix *B);
+void my_Matrix_ConcatRow(my_matrix *result, my_matrix *A, my_matrix *B);
+int my_Matrix_Equals(my_matrix *A, my_matrix *B);
+void my_Matrix_SwapRow(my_matrix *A, const unsigned int a, \
+    const unsigned int b, my_matrix *result);
+void my_Matrix_SwapCol(my_matrix *A, const unsigned int a,\
+    const unsigned int b, my_matrix *result);
+void my_Matrix_SumCol(my_matrix *A, my_matrix *result);
+void my_Matrix_SumRow(my_matrix *A, my_matrix *result);
+void my_Matrix_SetRow(my_matrix *A, const unsigned int m, const double x);
+void my_Matrix_SetCol(my_matrix *A, const unsigned int n, const double x);
+void my_Matrix_Broadcasting(my_matrix *A, const unsigned int m, \
+    const unsigned int n, my_matrix *result);
+double my_Matrix_Max(my_matrix *A);
+double my_Matrix_Min(my_matrix *A);
+void my_Matrix_ElementsMultiplication(my_matrix* result,\
     const unsigned int count, ...);
-double my_Matrix_MaxCol(my_Matrix *A, const unsigned int n);
-double my_Matrix_MaxRow(my_Matrix *A, const unsigned int m);
-double my_Matrix_MinCol(my_Matrix *A, const unsigned int n);
-double my_Matrix_MinRow(my_Matrix *A, const unsigned int m);
+double my_Matrix_MaxCol(my_matrix *A, const unsigned int n);
+double my_Matrix_MaxRow(my_matrix *A, const unsigned int m);
+double my_Matrix_MinCol(my_matrix *A, const unsigned int n);
+double my_Matrix_MinRow(my_matrix *A, const unsigned int m);

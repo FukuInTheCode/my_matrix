@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_Matrix_Min(my_Matrix *A) {
+double my_Matrix_Min(my_matrix *A) {
     double min = A->arr[0][0];
     unsigned int i;
     unsigned int j;
