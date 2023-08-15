@@ -42,8 +42,8 @@ void my_Matrix_Adjugate(my_matrix *A, my_matrix *result) {
     for(i=0; i<result->m; i++) {
         for(j=0; j<result->n; j++){
             my_matrix sub = {.m=0, .n=0};
-            my_Matrix_GetSubMatrix(A, i, j, &sub);
-            double cofactor = my_power(-1, i+j) * my_Matrix_Det(&sub);
+            my_Matrix_getsubmatrix(A, i, j, &sub);
+            double cofactor = my_power(-1, i+j) * my_matrix_det(&sub);
             my_matrix_set(result, i, j, cofactor);
             my_matrix_free(1, &sub);
         }

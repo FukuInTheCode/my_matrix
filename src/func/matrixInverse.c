@@ -5,7 +5,7 @@ void my_Matrix_Inverse(my_matrix *A, my_matrix *result) {
         fprintf(stderr, "Matrix is not a square matrix!");
         exit(1);
     }
-    double det = my_Matrix_Det(A);
+    double det = my_matrix_det(A);
     if(det == 0) {
         printf("A is not inversible!\n");
         my_matrix_create(A->m, A->n, 1, result);

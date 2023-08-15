@@ -13,7 +13,7 @@ void my_Matrix_GetColumn(my_matrix* A, unsigned int n, double result[]) {
     }
 }
 
-void my_Matrix_GetSubMatrix(my_matrix *A, const unsigned int m, const unsigned int n, my_matrix *result) {
+void my_Matrix_getsubmatrix(my_matrix *A, const unsigned int m, const unsigned int n, my_matrix *result) {
     my_matrix_create(A->m - 1, A->n - 1, 1, result);
     unsigned int i;
     unsigned int j;

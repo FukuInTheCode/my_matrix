@@ -28,8 +28,8 @@ void my_Matrix_PowerInt(my_matrix* A, const unsigned int n, my_matrix* result);
 void my_Matrix_RandInt(int minN, int maxN, const unsigned int count, ...);
 void my_Matrix_RandFloat(double minN, double maxN, \
     const unsigned int count, ...);
-double my_Matrix_Det(my_matrix *A);
-void my_Matrix_GetSubMatrix(my_matrix *A, \
+double my_matrix_det(my_matrix *A);
+void my_Matrix_getsubmatrix(my_matrix *A, \
     const unsigned int m, const unsigned int n, my_matrix *result);
 void my_Matrix_Adjugate(my_matrix *A, my_matrix *result);
 void my_Matrix_Inverse(my_matrix *A, my_matrix *result);
