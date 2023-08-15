@@ -39,7 +39,7 @@ double my_Matrix_Sum(my_matrix *A);
 void my_Matrix_One(my_matrix *A, my_matrix *result);
 void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
 void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
-void my_Matrix_ConcatCol(my_matrix *result, my_matrix *A, my_matrix *B);
+void my_matrix_concatcol(my_matrix *result, my_matrix *A, my_matrix *B);
 void my_Matrix_ConcatRow(my_matrix *result, my_matrix *A, my_matrix *B);
 int my_Matrix_Equals(my_matrix *A, my_matrix *B);
 void my_Matrix_SwapRow(my_matrix *A, const unsigned int a, \
