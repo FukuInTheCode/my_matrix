@@ -35,7 +35,7 @@ void my_matrix_adjugate(my_matrix *A, my_matrix *result);
 void my_matrix_inverse(my_matrix *A, my_matrix *result);
 void my_matrix_addscalar(my_matrix* A, double scalar, my_matrix* result);
 void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
-double my_Matrix_Sum(my_matrix *A);
+double my_matrix_sum(my_matrix *A);
 void my_matrix_one(my_matrix *A, my_matrix *result);
 void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
 void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
@@ -47,7 +47,7 @@ void my_Matrix_SwapRow(my_matrix *A, const unsigned int a, \
 void my_Matrix_SwapCol(my_matrix *A, const unsigned int a,\
     const unsigned int b, my_matrix *result);
 void my_matrix_sumcol(my_matrix *A, my_matrix *result);
-void my_Matrix_SumRow(my_matrix *A, my_matrix *result);
+void my_matrix_sumrow(my_matrix *A, my_matrix *result);
 void my_matrix_setrow(my_matrix *A, const unsigned int m, const double x);
 void my_matrix_setcol(my_matrix *A, const unsigned int n, const double x);
 void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
