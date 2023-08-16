@@ -42,7 +42,7 @@ void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
 void my_matrix_concatcol(my_matrix *result, my_matrix *A, my_matrix *B);
 void my_matrix_concatrow(my_matrix *result, my_matrix *A, my_matrix *B);
 int my_matrix_equals(my_matrix *A, my_matrix *B);
-void my_Matrix_SwapRow(my_matrix *A, const unsigned int a, \
+void my_matrix_swaprow(my_matrix *A, const unsigned int a, \
     const unsigned int b, my_matrix *result);
 void my_matrix_swapcol(my_matrix *A, const unsigned int a,\
     const unsigned int b, my_matrix *result);

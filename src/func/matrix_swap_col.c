@@ -8,7 +8,6 @@ void my_matrix_swapcol(my_matrix *A, const unsigned int a, \
     unsigned int i;
 
     my_matrix_copy(A, result);
-    for (i = 0; i < result->m; i++) {
+    for (i = 0; i < result->m; i++)
         swap(&(A->arr[i][a]), &(A->arr[i][b]));
-    }
 }
