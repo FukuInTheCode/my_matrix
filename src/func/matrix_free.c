@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_free(my_matrix *A)
+static void my_free(my_matrix *A)
 {
     unsigned int i;
     for (i = 0; i < A->m; i++) {
@@ -9,7 +9,7 @@ void my_free(my_matrix *A)
     free(A->arr);
 }
 
-int free_is_valid(my_matrix *A)
+static int free_is_valid(my_matrix *A)
 {
     return (A->m == 0 || A->n == 0 || A->arr == NULL) ? 84 : 0;
 }
