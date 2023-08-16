@@ -35,19 +35,23 @@ void my_matrix_create(unsigned int m, unsigned int n, \
     va_end(args);
 }
 
-void my_matrix_create_arr(unsigned int m, unsigned int n, my_matrix_t ***arr, uint8_t size) {
-    *arr = malloc(size * sizeof(my_matrix_t *));
+void my_matrix_create_array(my_matrix_t **arr, const uint8_t count, ...)
+{
+    unsigned int i;
+
+    *arr = malloc(count * sizeof(my_matrix_t));
     if (*arr == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
     }
 
-    for (uint8_t i = 0; i < size; i++) {
-        (*arr)[i] = malloc(sizeof(my_matrix_t));
-        if ((*arr)[i] == NULL) {
-            fprintf(stderr, "Memory allocation failed.\n");
-            exit(1);
-        }
-        create((*arr)[i], m, n);
+    va_list args;
+    va_start(args, count);
+    for (i = 0; i < count; i++) {
+        my_matrix_t *A = &((*arr)[i]);
+        uint8_t m = va_arg(args, int);
+        uint8_t n = va_arg(args, int);
+        create(A, m, n);
     }
+    va_end(args);
 }

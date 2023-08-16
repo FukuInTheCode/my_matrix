@@ -28,12 +28,12 @@ void my_matrix_free(const unsigned int count, ...)
     va_end(args);
 }
 
-void my_matrix_free_arr(my_matrix_t ***arr, uint8_t size)
+void my_matrix_free_array(my_matrix_t **arr, uint8_t size)
 {
     for (uint8_t i = 0; i < size; i++) {
-        my_free((*arr)[i]);
-        free((*arr)[i]);
+        my_matrix_t A = (*arr)[i];
+        if (free_is_valid(&A) == 84) continue;
+        my_free(&A);
     }
     free(*arr);
-    *arr = NULL;
 }
