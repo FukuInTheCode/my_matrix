@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void create(my_matrix *A, unsigned int m, unsigned int n)
+static void create(my_matrix *A, unsigned int m, unsigned int n)
 {
     unsigned int i;
 
