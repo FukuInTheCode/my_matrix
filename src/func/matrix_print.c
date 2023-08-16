@@ -28,9 +28,9 @@ void my_matrix_print(const unsigned int count, ...)
     va_end(args);
 }
 
-void my_matrix_print_arr(my_matrix_t ***arr, uint8_t size)
+void my_matrix_print_array(my_matrix_t **arr, uint8_t size)
 {
     for (uint8_t i = 0; i < size; i++) {
-        my_print((*arr)[i]);
+        my_print(&(*arr)[i]);
     }
 }
