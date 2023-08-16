@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_matrix_sum(my_matrix *A)
+double my_matrix_sum(my_matrix_t *A)
 {
     unsigned int i;
     unsigned int j;

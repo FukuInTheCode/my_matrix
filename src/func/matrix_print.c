@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-static void my_print(my_matrix *A)
+static void my_print(my_matrix_t *A)
 {
     unsigned int i;
     unsigned int j;
@@ -22,7 +22,7 @@ void my_matrix_print(const unsigned int count, ...)
     va_list args;
     va_start(args, count);
     for (i = 0; i < count; i++) {
-        my_matrix *A = va_arg(args, my_matrix *);
+        my_matrix_t *A = va_arg(args, my_matrix_t *);
         my_print(A);
     }
     va_end(args);

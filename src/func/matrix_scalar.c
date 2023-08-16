@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
-void my_matrix_multiplybyscalar(my_matrix *A, double scalar, \
-    my_matrix *result)
+void my_matrix_multiplybyscalar(my_matrix_t *A, double scalar, \
+    my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;
@@ -13,7 +13,7 @@ void my_matrix_multiplybyscalar(my_matrix *A, double scalar, \
     }
 }
 
-void my_matrix_addscalar(my_matrix *A, double scalar, my_matrix *result)
+void my_matrix_addscalar(my_matrix_t *A, double scalar, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;

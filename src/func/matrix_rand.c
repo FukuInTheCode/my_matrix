@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-static void set_randfloat(my_matrix *A, double minN, double maxN)
+static void set_randfloat(my_matrix_t *A, double minN, double maxN)
 {
     unsigned int i;
     unsigned int j;
@@ -19,13 +19,13 @@ void my_matrix_randfloat(const double minN, const double maxN,\
     va_list args;
     va_start(args, count);
     for (i = 0; i < count; i++) {
-        my_matrix *A = va_arg(args, my_matrix *);
+        my_matrix_t *A = va_arg(args, my_matrix_t *);
         set_randfloat(A, minN, maxN);
     }
     va_end(args);
 }
 
-static void set_randint(my_matrix *A, const int minN, const int maxN)
+static void set_randint(my_matrix_t *A, const int minN, const int maxN)
 {
     unsigned int i;
     unsigned int j;
@@ -43,7 +43,7 @@ void my_matrix_randint(const int minN, const int maxN, \
     va_list args;
     va_start(args, count);
     for (i = 0; i < count; i++) {
-        my_matrix *A = va_arg(args, my_matrix *);
+        my_matrix_t *A = va_arg(args, my_matrix_t *);
         set_randint(A, minN, maxN);
     }
     va_end(args);

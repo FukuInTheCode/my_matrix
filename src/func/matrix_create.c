@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-static void create(my_matrix *A, unsigned int m, unsigned int n)
+static void create(my_matrix_t *A, unsigned int m, unsigned int n)
 {
     unsigned int i;
 
@@ -28,7 +28,7 @@ void my_matrix_create(unsigned int m, unsigned int n, \
     va_list args;
     va_start(args, count);
     for (i = 0; i < count; i++) {
-        my_matrix *A = va_arg(args, my_matrix *);
+        my_matrix_t *A = va_arg(args, my_matrix_t *);
         my_matrix_free(1, A);
         create(A, m, n);
     }

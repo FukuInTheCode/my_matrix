@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
-void my_matrix_broadcasting(my_matrix *A, unsigned int m, \
-    unsigned int n, my_matrix *result)
+void my_matrix_broadcasting(my_matrix_t *A, unsigned int m, \
+    unsigned int n, my_matrix_t *result)
 {
     unsigned int i;
 
@@ -9,7 +9,7 @@ void my_matrix_broadcasting(my_matrix *A, unsigned int m, \
     if (A->n > 1 && n > A->n) n = A->n;
     my_matrix_create(m, n, 1, result);
     if (A->m == 1 && A->n == 1) {
-        my_matrix tmp = {.m = 0, .n = 0};
+        my_matrix_t tmp = {.m = 0, .n = 0};
         my_matrix_addscalar(result, A->arr[0][0], &tmp);
         my_matrix_copy(&tmp, result);
         my_matrix_free(1, &tmp);

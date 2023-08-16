@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_sumrow(my_matrix *A, my_matrix *result)
+void my_matrix_sumrow(my_matrix_t *A, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;

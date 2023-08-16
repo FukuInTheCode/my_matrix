@@ -1,20 +1,20 @@
 #include "../../includes/my.h"
 
 
-double *my_matrix_getrow(my_matrix *A, unsigned int i)
+double *my_matrix_getrow(my_matrix_t *A, unsigned int i)
 {
     return A->arr[i];
 }
 
-void my_matrix_getcolumn(my_matrix *A, unsigned int n, double result[])
+void my_matrix_getcolumn(my_matrix_t *A, unsigned int n, double result[])
 {
     unsigned int i;
     for (i = 0; i < A->m; i++)
         result[i] = A->arr[i][n];
 }
 
-void my_matrix_getsubmatrix(my_matrix *A, const unsigned int m, \
-    const unsigned int n, my_matrix *result)
+void my_matrix_getsubmatrix(my_matrix_t *A, const unsigned int m, \
+    const unsigned int n, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;

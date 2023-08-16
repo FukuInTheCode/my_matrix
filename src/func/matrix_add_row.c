@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result)
+void my_matrix_addrow(my_matrix_t *A, const unsigned int m, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;

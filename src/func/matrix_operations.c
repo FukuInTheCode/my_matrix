@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
 
-void my_matrix_transpose(my_matrix *A, my_matrix *T)
+void my_matrix_transpose(my_matrix_t *A, my_matrix_t *T)
 {
     unsigned int i, j;
 
@@ -13,7 +13,7 @@ void my_matrix_transpose(my_matrix *A, my_matrix *T)
     }
 }
 
-void my_matrix_powerint(my_matrix *A, const unsigned int n, my_matrix *result)
+void my_matrix_powerint(my_matrix_t *A, const unsigned int n, my_matrix_t *result)
 {
     unsigned int i;
 
@@ -26,7 +26,7 @@ void my_matrix_powerint(my_matrix *A, const unsigned int n, my_matrix *result)
         return;
     }
 
-    my_matrix copy = {.m = 0, .n = 0};
+    my_matrix_t copy = {.m = 0, .n = 0};
     my_matrix_copy(A, &copy);
 
     for (i = 2; i <= n; i++) {
@@ -36,7 +36,7 @@ void my_matrix_powerint(my_matrix *A, const unsigned int n, my_matrix *result)
     my_matrix_free(1, &copy);
 }
 
-void my_matrix_adjugate(my_matrix *A, my_matrix *result)
+void my_matrix_adjugate(my_matrix_t *A, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;
@@ -50,7 +50,7 @@ void my_matrix_adjugate(my_matrix *A, my_matrix *result)
     my_matrix_create(A->m, A->n, 1, result);
     for (i = 0; i < result->m; i++) {
         for (j = 0; j < result->n; j++){
-            my_matrix sub = {.m = 0, .n = 0};
+            my_matrix_t sub = {.m = 0, .n = 0};
             my_matrix_getsubmatrix(A, i, j, &sub);
             double cofactor = my_power(-1, i+j) * my_matrix_det(&sub);
             my_matrix_set(result, i, j, cofactor);

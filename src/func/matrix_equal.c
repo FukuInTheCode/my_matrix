@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-int my_matrix_equals(my_matrix *A, my_matrix *B)
+int my_matrix_equals(my_matrix_t *A, my_matrix_t *B)
 {
     unsigned int i;
 

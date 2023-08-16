@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result)
+void my_matrix_applyfunc(my_matrix_t *A, UnaryFunction func, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;

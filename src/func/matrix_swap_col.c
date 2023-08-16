@@ -1,7 +1,7 @@
 #include "../../includes./my.h"
 
-void my_matrix_swapcol(my_matrix *A, const unsigned int a, \
-    const unsigned int b, my_matrix *result)
+void my_matrix_swapcol(my_matrix_t *A, const unsigned int a, \
+    const unsigned int b, my_matrix_t *result)
 {
     if (a >= A->n || b >= A->n) return;
 

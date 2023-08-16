@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_matrix_maxrow(my_matrix *A, const unsigned int m)
+double my_matrix_maxrow(my_matrix_t *A, const unsigned int m)
 {
     unsigned int i;
 

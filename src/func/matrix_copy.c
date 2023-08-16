@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_copy(my_matrix* A, my_matrix* copy)
+void my_matrix_copy(my_matrix_t* A, my_matrix_t* copy)
 {
     unsigned int i, j;
     my_matrix_create(A->m, A->n, 1, copy);

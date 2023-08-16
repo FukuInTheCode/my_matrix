@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_concatrow(my_matrix *result, my_matrix *A, my_matrix *B)
+void my_matrix_concatrow(my_matrix_t *result, my_matrix_t *A, my_matrix_t *B)
 {
     unsigned int i;
     unsigned int j;

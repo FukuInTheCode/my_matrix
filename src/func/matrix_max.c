@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-double my_matrix_max(my_matrix *A)
+double my_matrix_max(my_matrix_t *A)
 {
     double max = A->arr[0][0];
     unsigned int i;

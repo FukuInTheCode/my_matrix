@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_setrow(my_matrix *A, const unsigned int m, const double x)
+void my_matrix_setrow(my_matrix_t *A, const unsigned int m, const double x)
 {
     unsigned int i;
 

@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_inverse(my_matrix *A, my_matrix *result)
+void my_matrix_inverse(my_matrix_t *A, my_matrix_t *result)
 {
     if (A->m != A->n) {
         fprintf(stderr, "Matrix is not a square matrix!");
@@ -13,7 +13,7 @@ void my_matrix_inverse(my_matrix *A, my_matrix *result)
         return;
     }
 
-    my_matrix Adjoint = {.m = 0, .n = 0};
+    my_matrix_t Adjoint = {.m = 0, .n = 0};
 
     my_matrix_adjugate(A, &Adjoint);
 
