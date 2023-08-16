@@ -19,7 +19,7 @@ void my_matrix_set(my_matrix *A, const unsigned int x, \
 void my_matrix_print(const unsigned int count, ...);
 void my_matrix_free(const unsigned int count, ...);
 void my_matrix_multiplybyscalar(my_matrix *A, double scalar, my_matrix *result);
-void my_Matrix_Add(my_matrix *result, const unsigned int count, ...);
+void my_matrix_add(my_matrix *result, const unsigned int count, ...);
 void my_matrix_transpose(my_matrix *A, my_matrix* T);
 void my_matrix_getcolumn(my_matrix *A, unsigned int n, double result[]);
 double* my_matrix_getrow(my_matrix *A, unsigned int i);
@@ -39,7 +39,7 @@ void my_matrix_addscalar(my_matrix *A, double scalar, my_matrix *result);
 void my_matrix_applyfunc(my_matrix *A, UnaryFunction func, my_matrix *result);
 double my_matrix_sum(my_matrix *A);
 void my_matrix_one(my_matrix *A, my_matrix *result);
-void my_Matrix_AddCol(my_matrix *A, const unsigned int n, my_matrix *result);
+void my_matrix_addcol(my_matrix *A, const unsigned int n, my_matrix *result);
 void my_matrix_addrow(my_matrix *A, const unsigned int m, my_matrix *result);
 void my_matrix_concatcol(my_matrix *result, my_matrix *A, my_matrix *B);
 void my_matrix_concatrow(my_matrix *result, my_matrix *A, my_matrix *B);
