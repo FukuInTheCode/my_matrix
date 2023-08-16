@@ -7,7 +7,7 @@ static void set_randfloat(my_matrix *A, double minN, double maxN)
 
     for (i = 0; i < A->m; i++) {
         for (j = 0; j < A->n; j++)
-            my_matrix_set(A, j, i, my_randFloat(minN, maxN));
+            my_matrix_set(A, j, i, my_randfloat(minN, maxN));
     }
 }
 
@@ -31,7 +31,7 @@ static void set_randint(my_matrix *A, const int minN, const int maxN)
     unsigned int j;
     for (i = 0; i < A->m; i++) {
         for (j = 0; j < A->n; j++)
-            my_matrix_set(A, j, i, my_randInt(minN, maxN));
+            my_matrix_set(A, j, i, my_randint(minN, maxN));
     }
 }
 
