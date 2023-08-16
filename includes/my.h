@@ -15,7 +15,5 @@ static inline __attribute__((always_inline)) void swap(double *a, double *b)
     *b = temp;
 }
 
-#define SWAP(A, B) swap(&A, &B);
-
 #define FALSE 0
 #define TRUE 1

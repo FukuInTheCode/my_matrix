@@ -11,7 +11,7 @@ static void set_randfloat(my_matrix *A, double minN, double maxN)
     }
 }
 
-void my_matrix_randfloat(double minN, double maxN,\
+void my_matrix_randfloat(const double minN, const double maxN,\
     const unsigned int count, ...)
 {
     unsigned int i;

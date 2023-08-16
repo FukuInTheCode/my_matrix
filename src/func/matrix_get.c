@@ -9,9 +9,8 @@ double *my_matrix_getrow(my_matrix *A, unsigned int i)
 void my_matrix_getcolumn(my_matrix *A, unsigned int n, double result[])
 {
     unsigned int i;
-    for (i = 0; i < A->m; i++) {
+    for (i = 0; i < A->m; i++)
         result[i] = A->arr[i][n];
-    }
 }
 
 void my_matrix_getsubmatrix(my_matrix *A, const unsigned int m, \
