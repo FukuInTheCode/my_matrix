@@ -48,7 +48,7 @@ void my_Matrix_SwapCol(my_matrix *A, const unsigned int a,\
     const unsigned int b, my_matrix *result);
 void my_Matrix_SumCol(my_matrix *A, my_matrix *result);
 void my_Matrix_SumRow(my_matrix *A, my_matrix *result);
-void my_Matrix_SetRow(my_matrix *A, const unsigned int m, const double x);
+void my_matrix_setrow(my_matrix *A, const unsigned int m, const double x);
 void my_matrix_setcol(my_matrix *A, const unsigned int n, const double x);
 void my_matrix_broadcasting(my_matrix *A, const unsigned int m, \
     const unsigned int n, my_matrix *result);

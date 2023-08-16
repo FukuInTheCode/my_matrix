@@ -19,6 +19,6 @@ void my_matrix_broadcasting(my_matrix *A, unsigned int m, \
     if (A->m == 1)
         for (i = 0; i < A->n; i++) my_matrix_setcol(result, i, A->arr[0][i]);
     if (A->n == 1)
-        for (i = 0; i < A->m; i++) my_Matrix_SetRow(result, i, A->arr[i][0]);
+        for (i = 0; i < A->m; i++) my_matrix_setrow(result, i, A->arr[i][0]);
     if (A->m != 1 && A->m != 1) my_matrix_copy(A, result);
 }
