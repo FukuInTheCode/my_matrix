@@ -35,7 +35,8 @@ static void set_randint(my_matrix *A, const int minN, const int maxN)
     }
 }
 
-void my_matrix_randint(const int minN, const int maxN, const unsigned int count, ...)
+void my_matrix_randint(const int minN, const int maxN, \
+    const unsigned int count, ...)
 {
     unsigned int i;
 
