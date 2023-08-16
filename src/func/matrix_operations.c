@@ -30,7 +30,7 @@ void my_matrix_powerint(my_matrix *A, const unsigned int n, my_matrix *result)
     my_matrix_copy(A, &copy);
 
     for (i = 2; i <= n; i++) {
-        my_Matrix_Product(result, 2, A, &copy);
+        my_matrix_product(result, 2, A, &copy);
         my_matrix_copy(result, &copy);
     }
     my_matrix_free(1, &copy);
