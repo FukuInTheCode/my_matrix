@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-int multiplication_is_valid(va_list args, const unsigned int count)
+static int multiplication_is_valid(va_list args, const unsigned int count)
 {
     unsigned int i;
     my_matrix *A = va_arg(args, my_matrix*);
@@ -14,7 +14,7 @@ int multiplication_is_valid(va_list args, const unsigned int count)
     return 0;
 }
 
-void multiply(my_matrix *result, my_matrix *A)
+static void multiply(my_matrix *result, my_matrix *A)
 {
     my_matrix tmp = {.m = 0, .n = 0};
     my_matrix_broadcasting(A, result->m, result->n, &tmp);
