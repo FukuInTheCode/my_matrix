@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-int add_is_valid(va_list args, const unsigned int count)
+static int add_is_valid(va_list args, const unsigned int count)
 {
     my_matrix *A = va_arg(args, my_matrix *);
     unsigned int baseM = A->m;
@@ -13,8 +13,7 @@ int add_is_valid(va_list args, const unsigned int count)
         }
     return 0;
 }
-
-void add(my_matrix *result, my_matrix *A)
+static void add(my_matrix *result, my_matrix *A)
 {
     my_matrix tmp = {.m = 0, .n = 0};
     my_matrix_broadcasting(A, result->m, result->n, &tmp);
