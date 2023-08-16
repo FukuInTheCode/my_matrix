@@ -12,10 +12,10 @@ void my_matrix_addcol(my_matrix *A, const unsigned int n, my_matrix *result)
     for (j = 0; j < result->n; j++) {
         if (j == n) continue;
         i2 = 0;
-        for (j = 0; j < result->n; j++) {
+        for (i = 0; i < result->m; i++) {
             result->arr[i][j] = A->arr[i2][j2];
-            j2++;
+            i2++;
         }
-        i2++;
+        j2++;
     }
 }
