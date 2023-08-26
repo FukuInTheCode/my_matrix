@@ -1,12 +1,20 @@
 #include "../includes/my.h"
 
+int gcd(int a, int b)
+{
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
 
 int main(int argc, char* argv[])
 {
     srand(time(NULL));
-    my_matrix_t *arr;
-    my_matrix_create_array(&arr, 3, 2, 2, 3, 3, 4, 4);
-    my_matrix_print_array(&arr, 3);
-    my_matrix_free_array(&arr, 3);
+    for (uint32_t i = 0; i < 10000; i++) {
+        printf("%u\n", i);
+    }
     return 0;
 }
