@@ -7,6 +7,7 @@
 #define TRUE 1
 
 typedef struct my_matrix {
+    char *name;
     unsigned int m;
     unsigned int n;
     double **arr;

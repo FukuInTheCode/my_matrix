@@ -2,17 +2,24 @@
 
 static void my_print(my_matrix_t *A)
 {
-    unsigned int i;
-    unsigned int j;
-
     if (A->m == 0 || A->n == 0) return;
-    for (i = 0; i < A->m; i++) {
-        for (j = 0; j < A->n;j++)
-            printf("%f ", A->arr[i][j]);
-
-        printf("\n");
+    char *t = A->name;
+    int len = 0;
+    while (*t != '\0') {
+        t++;
+        len++;
     }
-    printf("\n");
+    printf("%*s%c%*s%c\n", 3 + len, "", 218, 10 * A->n + 1, "", 191);
+    for (size_t i = 0; i < A->m; i++) {
+        if (i == (A->m / 2 - (A->m + 1) % 2))
+            printf("%s = %c ", A->name, 179);
+        else
+            printf("%*s%c ", 3 + len, "", 179);
+        for (size_t j = 0; j < A->n;j++)
+            printf("%*s%f ", A->arr[i][j] >= 0 ? 1 : 0, "", A->arr[i][j]);
+        printf("%c\n", 179);
+    }
+    printf("%*s%c%*s%c\n", 3 + len, "", 192, 10 * A->n + 1, "", 217);
 }
 
 void my_matrix_print(const unsigned int count, ...)

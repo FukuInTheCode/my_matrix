@@ -9,7 +9,8 @@
         "stdio.h": "c",
         "my_math.h": "c",
         "stdarg.h": "c",
-        "my_matrix.h": "c"
+        "my_matrix.h": "c",
+        "typeinfo": "c"
     },
     "epilinter.tokenizer_address": "ws://54.36.183.139:8081"
 }
