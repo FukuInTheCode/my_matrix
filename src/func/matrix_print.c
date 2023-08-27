@@ -39,7 +39,8 @@ static void my_print(my_matrix_t *A)
         for (size_t j = 0; j < A->n;j++) {
             int pad = (A->arr[i][j] < 0 ? 0 : 1) + dgts;
             pad -= A->arr[i][j] != 0 ? (int)log10(my_abs(A->arr[i][j])) : \
-                                                                (dgts - 1);
+                                                                (dgts);
+            // printf("%d", pad);
             printf("%*s%f ", pad, "", A->arr[i][j]);
         }
         printf(" %c\n", 179);
