@@ -35,23 +35,39 @@ void my_matrix_create(unsigned int m, unsigned int n, \
     va_end(args);
 }
 
-void my_matrix_create_array(my_matrix_t **arr, const uint8_t count, ...)
+static inline __attribute__((always_inline)) char *test(char **str, int i)
 {
-    unsigned int i;
+    size_t ite = (size_t)log10(i) + 1;
+    char *m_str = malloc(strlen(*str) + 1 + ite);
+    if (m_str == NULL) {
+        fprintf(stderr, "Memory Allocation Failed!");
+        exit(1);
+    }
+    strcpy(m_str, *str);
+    m_str[strlen(*str) + ite] = '\0';
+    for (size_t j = 1; j <= ite; ++j) {
+        m_str[strlen(*str) + ite - j] = 48 + i % 10;
+        i = (i - i % 10) / 10;
+    }
+    return m_str;
+}
 
+void my_matrix_create_array(my_matrix_t **arr, char *common_name, \
+                                const uint32_t count, ...)
+{
     *arr = malloc(count * sizeof(my_matrix_t));
     if (*arr == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
     }
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
-        my_matrix_t *A = &((*arr)[i]);
-        uint8_t m = va_arg(args, int);
-        uint8_t n = va_arg(args, int);
+    for (size_t i = 1; i <= count; i++) {
+        my_matrix_t *A = &((*arr)[i - 1]);
+        uint32_t m = va_arg(args, int);
+        uint32_t n = va_arg(args, int);
         create(A, m, n);
+        A->name = test(&common_name, i);
     }
     va_end(args);
 }

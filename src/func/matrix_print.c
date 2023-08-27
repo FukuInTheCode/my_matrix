@@ -12,9 +12,12 @@ static inline __attribute__((always_inline)) void padding(my_matrix_t *A, \
     *dgts = 0;
     int tmp_max = (int)my_abs(my_matrix_max(A));
     int tmp_min = (int)my_abs(my_matrix_min(A));
+    if (tmp_max == 0)
+        tmp_max = 1;
+    if (tmp_min == 0)
+        tmp_min = 1;
     tmp_max = (int)log10(tmp_max);
     tmp_min = (int)log10(tmp_min);
-    printf("%d, %d\n", tmp_max, tmp_min);
     if (tmp_max > tmp_min)
         *dgts += tmp_max;
     else
