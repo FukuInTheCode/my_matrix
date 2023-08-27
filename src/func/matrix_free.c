@@ -7,6 +7,9 @@ static void my_free(my_matrix_t *A)
         free(A->arr[i]);
     }
     free(A->arr);
+    A->arr = NULL;
+    A->m = 0;
+    A->n = 0;
 }
 
 static int free_is_valid(my_matrix_t *A)
@@ -23,7 +26,9 @@ void my_matrix_free(const unsigned int count, ...)
     for (i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         if (free_is_valid(A) == 84) continue;
+        printf("%u\n", A->m);
         my_free(A);
+        printf("%u\n", A->m);
     }
     va_end(args);
 }
