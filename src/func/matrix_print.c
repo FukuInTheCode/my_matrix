@@ -30,7 +30,6 @@ static void my_print(my_matrix_t *A)
     uint32_t len;
     int dgts;
     padding(A, &len, &dgts);
-    printf("%d\n", dgts);
     printf("%*s%c%*s %c\n", 3 + len, "", 218, (10 + dgts) * A->n + 1, "", 191);
     for (size_t i = 0; i < A->m; i++) {
         if (i == (A->m / 2 - (A->m + 1) % 2))
