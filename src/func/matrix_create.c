@@ -67,7 +67,7 @@ void my_matrix_create_array(my_matrix_t **arr, char *common_name, \
         uint32_t m = va_arg(args, int);
         uint32_t n = va_arg(args, int);
         create(A, m, n);
-        A->name = init_str(&common_name, i);
+        A->name = init_str(common_name, i);
     }
     va_end(args);
 }
