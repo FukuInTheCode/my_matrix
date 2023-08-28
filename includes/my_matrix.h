@@ -6,6 +6,15 @@
 #define FALSE 0
 #define TRUE 1
 
+#define MAT_PRINT(A) my_matrix_print(1, &A)
+
+#define MAT_CREATE(A) my_matrix_t A = {.n = 0, .m = 0, .name = #A}
+
+typedef enum {
+    my_false = FALSE,
+    my_true = TRUE
+} my_bool_t;
+
 typedef struct my_matrix {
     char *name;
     uint32_t m;
@@ -79,7 +88,7 @@ void my_matrix_fill_from_array(my_matrix_t *A, double *arr, uint32_t arr_size);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
-    size_t ite = (size_t)log10(i) + 1;
+    size_t ite = (size_t)log10(i == 0 ? 1 : i) + 1;
     char *m_str = malloc(strlen(str) + 1 + ite);
     if (m_str == NULL) {
         fprintf(stderr, "Memory Allocation Failed!");
