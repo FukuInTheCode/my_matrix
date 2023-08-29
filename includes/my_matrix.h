@@ -13,6 +13,14 @@
 
 #define MAT_DECLA(A) my_matrix_t A = {.n = 0, .m = 0, .name = #A}
 
+static inline __attribute__((always_inline)) void check_alloc(void *A)
+{
+    if (A == NULL) {
+        fprintf(stderr, "Memory allocation failed!");
+        exit(1);
+    }
+}
+
 typedef enum {
     my_false = FALSE,
     my_true = TRUE
