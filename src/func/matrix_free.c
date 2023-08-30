@@ -7,6 +7,8 @@ static void my_free(my_matrix_t *A)
         free(A->arr[i]);
     }
     free(A->arr);
+    free(A->name);
+    A->name = NULL;
     A->arr = NULL;
     A->m = 0;
     A->n = 0;
@@ -26,7 +28,6 @@ void my_matrix_free(const unsigned int count, ...)
     for (i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         if (free_is_valid(A) == 84) continue;
-
         my_free(A);
     }
     va_end(args);

@@ -2,10 +2,8 @@
     "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
     "files.associations": {
         "my.h": "c",
-        "matrixFunc.C": "cpp",
         "cstdarg": "c",
         "limits": "c",
-        "matrixSet.C": "cpp",
         "stdio.h": "c",
         "my_math.h": "c",
         "stdarg.h": "c",

@@ -4,29 +4,30 @@ static inline __attribute__((always_inline)) void padding(my_matrix_t *A, \
                     uint32_t *len, int *dgts)
 {
     char *t = A->name;
-    *len = 0;
-    while (*t != '\0') {
-        t++;
-        (*len)++;
-    }
-    *dgts = 0;
-    int tmp_max = (int)my_abs(my_matrix_max(A));
-    int tmp_min = (int)my_abs(my_matrix_min(A));
-    if (tmp_max == 0)
-        tmp_max = 1;
-    if (tmp_min == 0)
-        tmp_min = 1;
+    if (t != NULL){
+        *len = 0;
+        while (*t != '\0' && t != NULL) {
+            t++;
+            (*len)++;
+        }
+    } else
+        *len = 6;
+    int tmp_max = (int)my_abs(my_matrix_max(A)) == 0 ? 1 :\
+                                 (int)my_abs(my_matrix_max(A));
+    int tmp_min = (int)my_abs(my_matrix_min(A)) == 0 ? 1 :\
+                                    (int)my_abs(my_matrix_min(A));
     tmp_max = (int)log10(tmp_max);
     tmp_min = (int)log10(tmp_min);
     if (tmp_max > tmp_min)
-        *dgts += tmp_max;
+        *dgts = tmp_max;
     else
-        *dgts += tmp_min;
+        *dgts = tmp_min;
 }
 
 static void my_print(my_matrix_t *A)
 {
     if (A->m == 0 || A->n == 0) return;
+
     uint32_t len;
     int dgts;
     padding(A, &len, &dgts);
