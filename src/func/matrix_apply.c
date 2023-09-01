@@ -13,3 +13,11 @@ void my_matrix_applyfunc(my_matrix_t *A, UnaryFunction func, my_matrix_t *result
         }
     }
 }
+
+void my_matrix_applyfunc_2(my_matrix_t *A, UnaryFunction func)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_applyfunc(&cpy, func, A);
+    MAT_FREE(cpy);
+}
