@@ -11,3 +11,12 @@ void my_matrix_swaprow(my_matrix_t *A, const unsigned int a, \
     for (i = 0; i < result->n; i++)
         swap(&(result->arr[a][i]), &(result->arr[b][i]));
 }
+
+void my_matrix_swaprow_2(my_matrix_t *A, const unsigned int a, \
+    const unsigned int b)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_swaprow(&cpy, a, b, A);
+    MAT_FREE(cpy);
+}
