@@ -22,3 +22,11 @@ void my_matrix_powerint(my_matrix_t *A, const unsigned int n, my_matrix_t *resul
     }
     my_matrix_free(1, &copy);
 }
+
+void my_matrix_powerint_2(my_matrix_t *A, const unsigned int n)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_powerint(&cpy, n, A);
+    MAT_FREE(cpy);
+}
