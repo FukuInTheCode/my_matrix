@@ -20,3 +20,12 @@ void my_matrix_addrow(my_matrix_t *A, const unsigned int m, my_matrix_t *result)
         i2++;
     }
 }
+
+void my_matrix_addrow_2(my_matrix *A, const uint32_t n)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_addrow(&cpy, n, A);
+    MAT_FREE(&cpy);
+}
+
