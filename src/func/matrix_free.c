@@ -7,8 +7,6 @@ static void my_free(my_matrix_t *A)
         free(A->arr[i]);
     }
     free(A->arr);
-    free(A->name);
-    A->name = NULL;
     A->arr = NULL;
     A->m = 0;
     A->n = 0;

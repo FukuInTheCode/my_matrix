@@ -7,6 +7,7 @@ static void create(my_matrix_t *A, unsigned int m, unsigned int n)
     A->m = m;
     A->n = n;
     A->arr = malloc(m * sizeof(double *));
+
     if (A->arr == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
