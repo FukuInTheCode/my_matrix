@@ -21,3 +21,11 @@ void my_matrix_inverse(my_matrix_t *A, my_matrix_t *result)
 
     my_matrix_free(1, &Adjoint);
 }
+
+void my_matrix_inverse_2(my_matrix_t *A)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_inverse(&cpy, A);
+    MAT_FREE(cpy);
+}
