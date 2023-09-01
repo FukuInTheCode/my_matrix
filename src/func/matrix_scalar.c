@@ -28,7 +28,7 @@ void my_matrix_addscalar(my_matrix_t *A, double scalar, my_matrix_t *result)
 void my_matrix_addscalar_2(my_matrix_t *A, double scalar)
 {
     MAT_DECLA(cpy);
-    my_matrix_copy(&cpy, A);
+    my_matrix_copy(A, &cpy);
     my_matrix_addscalar(&cpy, scalar, A);
     MAT_FREE(cpy);
 }

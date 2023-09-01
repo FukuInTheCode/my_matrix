@@ -18,6 +18,10 @@ int main(int argc, char* argv[])
 
     my_matrix_copy(&a, &c);
     MAT_PRINT(c);
+    my_matrix_multiplybyscalar_2(&c, 2);
+    MAT_PRINT(c);
+    my_matrix_addscalar_2(&c, 2);
+    MAT_PRINT(c);
 
     printf("--------\n");
     printf("--------\n");
