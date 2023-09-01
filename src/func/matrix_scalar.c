@@ -24,3 +24,11 @@ void my_matrix_addscalar(my_matrix_t *A, double scalar, my_matrix_t *result)
             result->arr[i][j] += scalar;
     }
 }
+
+void my_matrix_addscalar_2(my_matrix_t *A, double scalar)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(&cpy, A);
+    my_matrix_addscalar(&cpy, scalar, A);
+    MAT_FREE(cpy);
+}
