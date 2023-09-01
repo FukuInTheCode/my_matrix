@@ -95,6 +95,7 @@ void my_matrix_addrow_2(my_matrix *A, const uint32_t n);
 void my_matrix_applyfunc_2(my_matrix_t *A, UnaryFunction func);
 void my_matrix_broadcasting_2(my_matrix_t *A, unsigned int m, \
     unsigned int n);
+void my_matrix_inverse_2(my_matrix_t *A);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
