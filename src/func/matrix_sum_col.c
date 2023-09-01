@@ -14,3 +14,12 @@ void my_matrix_sumcol(my_matrix_t *A, my_matrix_t *result)
         result->arr[0][i] = sum;
     }
 }
+
+void my_matrix_sumcol_2(my_matrix_t *A)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_sumcol(&cpy, A);
+    MAT_FREE(cpy);
+}
+
