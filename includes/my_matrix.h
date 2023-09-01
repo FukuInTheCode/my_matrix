@@ -97,6 +97,7 @@ void my_matrix_broadcasting_2(my_matrix_t *A, unsigned int m, \
     unsigned int n);
 void my_matrix_inverse_2(my_matrix_t *A);
 void my_matrix_one_2(my_matrix_t *A);
+void my_matrix_powerint_2(my_matrix_t *A, const unsigned int n);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
