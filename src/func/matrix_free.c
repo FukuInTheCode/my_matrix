@@ -37,6 +37,8 @@ void my_matrix_free_array(my_matrix_t **arr, uint8_t size)
         my_matrix_t A = (*arr)[i];
         if (free_is_valid(&A) == 84) continue;
         my_free(&A);
+        free(A.name);
+        A.name = NULL;
     }
     free(*arr);
 }
