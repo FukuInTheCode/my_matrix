@@ -91,6 +91,7 @@ void my_matrix_create_array(my_matrix_t **arr, char *common_name, \
 void my_matrix_print_array(my_matrix_t **arr, uint8_t size);
 void my_matrix_fill_from_array(my_matrix_t *A, double *arr, uint32_t arr_size);
 void my_matrix_addcol_2(my_matrix *A, const uint32_t n);
+void my_matrix_addrow_2(my_matrix *A, const uint32_t n);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
