@@ -21,3 +21,12 @@ void my_matrix_broadcasting(my_matrix_t *A, unsigned int m, \
         for (i = 0; i < A->m; i++) my_matrix_setrow(result, i, A->arr[i][0]);
     if (A->m != 1 && A->n != 1) my_matrix_copy(A, result);
 }
+
+void my_matrix_broadcasting_2(my_matrix_t *A, unsigned int m, \
+    unsigned int n)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_broadcasting(&cpy, m, n, A);
+    MAT_FREE(cpy);
+}
