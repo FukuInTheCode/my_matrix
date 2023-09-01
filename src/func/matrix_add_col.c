@@ -19,3 +19,11 @@ void my_matrix_addcol(my_matrix_t *A, const unsigned int n, my_matrix_t *result)
         j2++;
     }
 }
+
+void my_matrix_addcol_2(my_matrix *A, const uint32_t n)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_addcol(&cpy, n, A);
+    MAT_FREE(&cpy);
+}

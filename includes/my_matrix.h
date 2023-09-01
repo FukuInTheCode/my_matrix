@@ -7,6 +7,7 @@
 #define TRUE 1
 
 #define MAT_PRINT(A) my_matrix_print(1, &A)
+
 #define MAT_FREE(A) my_matrix_free(1, &A)
 
 #define MAT_PRINT_DIM(A) printf("%s's dim: m = %u, n = %u\n", A.name, A.m, A.n)
