@@ -103,6 +103,8 @@ void my_matrix_sumcol_2(my_matrix_t *A);
 void my_matrix_sumrow_2(my_matrix_t *A);
 void my_matrix_swapcol_2(my_matrix_t *A, const unsigned int a, \
     const unsigned int b);
+void my_matrix_swaprow_2(my_matrix_t *A, const unsigned int a, \
+    const unsigned int b);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
