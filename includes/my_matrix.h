@@ -100,6 +100,7 @@ void my_matrix_one_2(my_matrix_t *A);
 void my_matrix_powerint_2(my_matrix_t *A, const unsigned int n);
 void my_matrix_addscalar_2(my_matrix_t *A, double scalar);
 void my_matrix_sumcol_2(my_matrix_t *A);
+void my_matrix_sumrow_2(my_matrix_t *A);
 
 static inline __attribute__((always_inline)) char *init_str(char *str, int i)
 {
