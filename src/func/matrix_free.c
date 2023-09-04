@@ -11,9 +11,9 @@ static void my_free(my_matrix_t *A)
     A->n = 0;
 }
 
-static int free_is_valid(my_matrix_t *A)
+static my_bool_t free_is_valid(my_matrix_t *A)
 {
-    return (A->m == 0 || A->n == 0 || A->arr == NULL) ? 84 : 0;
+    return (A->m == 0 || A->n == 0 || A->arr == NULL) ? my_false: my_true;
 }
 
 void my_matrix_free(uint32_t const count, ...)
@@ -22,7 +22,7 @@ void my_matrix_free(uint32_t const count, ...)
     va_start(args, count);
     for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
-        if (free_is_valid(A) == 84) continue;
+        if (free_is_valid(A) == my_false) continue;
         my_free(A);
     }
     va_end(args);
