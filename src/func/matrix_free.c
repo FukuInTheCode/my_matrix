@@ -2,8 +2,7 @@
 
 static void my_free(my_matrix_t *A)
 {
-    unsigned int i;
-    for (i = 0; i < A->m; i++) {
+    for (uint32_t i = 0; i < A->m; i++) {
         free(A->arr[i]);
     }
     free(A->arr);
