@@ -7,10 +7,10 @@ static my_bool_t product_is_valid(va_list args, uint32_t const count)
     uint32_t insideN = A->n;
     for (uint32_t i = 0; i < (count - 1); i++) {
         A = va_arg(args, my_matrix_t *);
-        if (A->m != insideN) return FALSE;
+        if (A->m != insideN) return my_false;
         insideN = A->n;
     }
-    return TRUE;
+    return my_true;
 }
 
 static void my_product(my_matrix_t *A, my_matrix_t *B, my_matrix_t *result)

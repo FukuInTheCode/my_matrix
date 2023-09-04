@@ -8,9 +8,9 @@ static my_bool_t add_is_valid(va_list args, uint32_t const count)
     for (uint32_t i = 0; i < count - 1; i++) {
         A = va_arg(args, my_matrix_t *);
         if ((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1))
-            return FALSE;
+            return my_false;
         }
-    return TRUE;
+    return my_true;
 }
 static void add(my_matrix_t *result, my_matrix_t *A)
 {
