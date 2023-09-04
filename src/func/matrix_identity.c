@@ -2,14 +2,12 @@
 
 static void identity(my_matrix_t *A)
 {
-    unsigned int i, j;
-
     if (A->m != A->n) return;
-    for (i = 0; i < A->m; i++) {
-        for (j = 0; j < A->n; j++)
+    for (uint32_t i = 0; i < A->m; i++) {
+        for (uint32_t j = 0; j < A->n; j++)
             my_matrix_set(A, j, i, 0);
     }
-    for (i = 0; i < A->m; i++)
+    for (uint32_t i = 0; i < A->m; i++)
         my_matrix_set(A, i, i, 1);
 }
 
