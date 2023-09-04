@@ -47,13 +47,11 @@ static void my_print(my_matrix_t *A)
     printf("%*s%c%*s %c\n", 3 + len, "", 192, (10 + dgts) * A->n + 1, "", 217);
 }
 
-void my_matrix_print(const unsigned int count, ...)
+void my_matrix_print(uint32_t const count, ...)
 {
-    unsigned int i;
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         my_print(A);
     }
