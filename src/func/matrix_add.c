@@ -26,7 +26,7 @@ static void add(my_matrix_t *result, my_matrix_t *A)
     my_matrix_free(1, &tmp);
 }
 
-void my_matrix_add(my_matrix_t *result, const unsigned int count, ...)
+void my_matrix_add(my_matrix_t *result, uint32_t const count, ...)
 {
     va_list args;
     va_list args_copy;
@@ -41,8 +41,7 @@ void my_matrix_add(my_matrix_t *result, const unsigned int count, ...)
     my_matrix_t *A = va_arg(args, my_matrix_t *);
     my_matrix_create(A->m, A->n, 1, result);
     my_matrix_copy(A, result);
-    unsigned int i;
-    for (i = 0; i < (count-1); i++) {
+    for (uint32_t i = 0; i < (count-1); i++) {
         A = va_arg(args, my_matrix_t *);
         add(result, A);
     }
