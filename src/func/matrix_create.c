@@ -21,7 +21,7 @@ void my_matrix_create(uint32_t m, uint32_t n, \
     va_start(args, count);
     for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
-        my_matrix_free(1, A);
+        MAT_FREE((*A));
         create(A, m, n);
     }
     va_end(args);
