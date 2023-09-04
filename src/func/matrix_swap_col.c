@@ -10,8 +10,8 @@ void my_matrix_swapcol(my_matrix_t *A, uint32_t const a, \
         swap(&(A->arr[i][a]), &(A->arr[i][b]));
 }
 
-void my_matrix_swapcol_2(my_matrix_t *A, const unsigned int a, \
-    const unsigned int b)
+void my_matrix_swapcol_2(my_matrix_t *A, uint32_t const a, \
+    uint32_t const b)
 {
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
