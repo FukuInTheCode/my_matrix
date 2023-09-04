@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-static int add_is_valid(va_list args, uint32_t const count)
+static my_bool_t add_is_valid(va_list args, uint32_t const count)
 {
     my_matrix_t *A = va_arg(args, my_matrix_t *);
     uint32_t baseM = A->m;
@@ -8,9 +8,9 @@ static int add_is_valid(va_list args, uint32_t const count)
     for (uint32_t i = 0; i < count-1; i++) {
         A = va_arg(args, my_matrix_t *);
         if ((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1))
-            return 1;
+            return FALSE;
         }
-    return 0;
+    return TRUE;
 }
 static void add(my_matrix_t *result, my_matrix_t *A)
 {
@@ -30,7 +30,7 @@ void my_matrix_add(my_matrix_t *result, uint32_t const count, ...)
     va_list args_copy;
     va_copy(args_copy, args);
     va_start(args_copy, count);
-    if (add_is_valid(args_copy, count) == 1) {
+    if (add_is_valid(args_copy, count) == FALSE) {
         va_end(args_copy);
         return;
     }
