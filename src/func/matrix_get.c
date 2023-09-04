@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
 
-double *my_matrix_getrow(my_matrix_t *A, unsigned int i)
+double *my_matrix_getrow(my_matrix_t *A, uint32_t i)
 {
     return A->arr[i];
 }
