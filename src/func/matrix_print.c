@@ -32,12 +32,12 @@ static void my_print(my_matrix_t *A)
     int dgts;
     padding(A, &len, &dgts);
     printf("%*s%c%*s %c\n", 3 + len, "", 218, (10 + dgts) * A->n + 1, "", 191);
-    for (size_t i = 0; i < A->m; i++) {
+    for (uint32_t i = 0; i < A->m; i++) {
         if (i == (A->m / 2 - (A->m + 1) % 2))
             printf("%s = %c ", A->name, 179);
         else
             printf("%*s%c ", 3 + len, "", 179);
-        for (size_t j = 0; j < A->n; j++) {
+        for (uint32_t j = 0; j < A->n; j++) {
             int pad = (A->arr[i][j] < 0 ? 0 : 1) + dgts;
             pad -= my_abs(A->arr[i][j]) >= 1 ? (int)log10(my_abs(A->arr[i][j])) : 0;
             printf("%*s%f ", pad, "", A->arr[i][j]);
