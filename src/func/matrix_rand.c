@@ -35,14 +35,12 @@ static void set_randint(my_matrix_t *A, const int minN, const int maxN)
     }
 }
 
-void my_matrix_randint(const int minN, const int maxN, \
-    const unsigned int count, ...)
+void my_matrix_randint(int const minN, int const maxN, \
+    uint32_t const count, ...)
 {
-    unsigned int i;
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         set_randint(A, minN, maxN);
     }
