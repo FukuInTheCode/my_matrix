@@ -28,11 +28,11 @@ void my_matrix_free(uint32_t const count, ...)
     va_end(args);
 }
 
-void my_matrix_free_array(my_matrix_t **arr, uint8_t size)
+void my_matrix_free_array(my_matrix_t **arr, uint32_t size)
 {
-    for (uint8_t i = 0; i < size; i++) {
+    for (uint32_t i = 0; i < size; i++) {
         my_matrix_t A = (*arr)[i];
-        if (free_is_valid(&A) == 84) continue;
+        if (free_is_valid(&A) == my_false) continue;
         my_free(&A);
         free(A.name);
         A.name = NULL;
