@@ -3,12 +3,9 @@
 void my_matrix_multiplybyscalar(my_matrix_t *A, double scalar, \
     my_matrix_t *result)
 {
-    unsigned int i;
-    unsigned int j;
-
     my_matrix_copy(A, result);
-    for (i = 0; i < A->m; i++) {
-        for (j = 0; j < A->n; j++)
+    for (uint32_t i = 0; i < A->m; i++) {
+        for (uint32_t j = 0; j < A->n; j++)
             result->arr[i][j] *= scalar;
     }
 }
