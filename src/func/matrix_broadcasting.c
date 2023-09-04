@@ -20,8 +20,8 @@ void my_matrix_broadcasting(my_matrix_t *A, uint32_t m, \
         my_matrix_copy(A, result);
 }
 
-void my_matrix_broadcasting_2(my_matrix_t *A, unsigned int m, \
-    unsigned int n)
+void my_matrix_broadcasting_2(my_matrix_t *A, uint32_t m, \
+    uint32_t n)
 {
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
