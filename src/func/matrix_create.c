@@ -21,14 +21,12 @@ static void create(my_matrix_t *A, unsigned int m, unsigned int n)
     }
 }
 
-void my_matrix_create(unsigned int m, unsigned int n, \
-    const unsigned int count, ...)
+void my_matrix_create(uint32_t m, uint32_t n, \
+    uint32_t const count, ...)
 {
-    unsigned int i;
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         my_matrix_free(1, A);
         create(A, m, n);
