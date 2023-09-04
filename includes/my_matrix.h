@@ -89,8 +89,8 @@ void my_matrix_fill_from_array(my_matrix_t *A, double *arr, uint32_t arr_size);
 void my_matrix_addcol_2(my_matrix_t *A, uint32_t const n);
 void my_matrix_addrow_2(my_matrix_t *A, uint32_t const n);
 void my_matrix_applyfunc_2(my_matrix_t *A, temp_func func);
-void my_matrix_broadcasting_2(my_matrix_t *A, unsigned int m, \
-    unsigned int n);
+void my_matrix_broadcasting_2(my_matrix_t *A, uint32_t m, \
+    uint32_t n);
 void my_matrix_inverse_2(my_matrix_t *A);
 void my_matrix_one_2(my_matrix_t *A);
 void my_matrix_powerint_2(my_matrix_t *A, const unsigned int n);
