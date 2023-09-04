@@ -1,12 +1,11 @@
 #include "../../includes/my.h"
 
-static int add_is_valid(va_list args, const unsigned int count)
+static int add_is_valid(va_list args, uint32_t const count)
 {
     my_matrix_t *A = va_arg(args, my_matrix_t *);
-    unsigned int baseM = A->m;
-    unsigned int baseN = A->n;
-    unsigned int i;
-    for (i = 0; i < count-1; i++) {
+    uint32_t baseM = A->m;
+    uint32_t baseN = A->n;
+    for (uint32_t i = 0; i < count-1; i++) {
         A = va_arg(args, my_matrix_t *);
         if ((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1))
             return 1;
