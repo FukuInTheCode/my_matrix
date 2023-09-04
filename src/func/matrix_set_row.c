@@ -1,10 +1,8 @@
 #include "../../includes/my.h"
 
-void my_matrix_setrow(my_matrix_t *A, const unsigned int m, const double x)
+void my_matrix_setrow(my_matrix_t *A, uint32_t const m, double const x)
 {
-    unsigned int i;
-
     if (m >= A->m) return;
-    for (i = 0; i < A->n; i++)
+    for (uint32_t i = 0; i < A->n; i++)
         A->arr[m][i] = x;
 }
