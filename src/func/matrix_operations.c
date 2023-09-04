@@ -3,9 +3,6 @@
 
 void my_matrix_adjugate(my_matrix_t *A, my_matrix_t *result)
 {
-    unsigned int i;
-    unsigned int j;
-
     if (A->m != A->n) {
         fprintf(stderr, "Matrix is not a square matrix!");
         exit(1);
@@ -13,13 +10,13 @@ void my_matrix_adjugate(my_matrix_t *A, my_matrix_t *result)
         return my_matrix_identity(1, result);
 
     my_matrix_create(A->m, A->n, 1, result);
-    for (i = 0; i < result->m; i++) {
-        for (j = 0; j < result->n; j++){
-            my_matrix_t sub = {.m = 0, .n = 0};
+    for (uint32_t i = 0; i < result->m; i++) {
+        for (uint32_t j = 0; j < result->n; j++){
+            MAT_DECLA(sub);
             my_matrix_getsubmatrix(A, i, j, &sub);
             double cofactor = my_power(-1, i+j) * my_matrix_det(&sub);
             my_matrix_set(result, i, j, cofactor);
-            my_matrix_free(1, &sub);
+            MAT_FREE(sub);
         }
     }
 }
