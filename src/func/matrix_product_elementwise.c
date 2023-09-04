@@ -16,15 +16,14 @@ static int multiplication_is_valid(va_list args, const unsigned int count)
 
 static void multiply(my_matrix_t *result, my_matrix_t *A)
 {
-    my_matrix_t tmp = {.m = 0, .n = 0};
+    MAT_DECLA(tmp);
     my_matrix_broadcasting(A, result->m, result->n, &tmp);
-    unsigned int i, j;
-    for (i = 0; i < result->m; i++) {
-        for (j = 0; j < result->n; j++) {
+    for (uint32_t i = 0; i < result->m; i++) {
+        for (uint32_t j = 0; j < result->n; j++) {
             result->arr[i][j] *= tmp.arr[i][j];
         }
     }
-    my_matrix_free(1, &tmp);
+    MAT_FREE(tmp);
 }
 
 void my_matrix_product_elementwise(my_matrix_t *result, \
