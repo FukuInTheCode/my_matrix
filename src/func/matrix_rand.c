@@ -1,12 +1,9 @@
 #include "../../includes/my.h"
 
-static void set_randfloat(my_matrix_t *A, double minN, double maxN)
+static void set_randfloat(my_matrix_t *A, double const minN, double const maxN)
 {
-    unsigned int i;
-    unsigned int j;
-
-    for (i = 0; i < A->m; i++) {
-        for (j = 0; j < A->n; j++)
+    for (uint32_t i = 0; i < A->m; i++) {
+        for (uint32_t j = 0; j < A->n; j++)
             my_matrix_set(A, j, i, my_randfloat(minN, maxN));
     }
 }
