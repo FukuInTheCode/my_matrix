@@ -1,17 +1,16 @@
 #include "../../includes/my.h"
 
-static int multiplication_is_valid(va_list args, const unsigned int count)
+static my_bool_t multiplication_is_valid(va_list args, uint32_t const count)
 {
-    unsigned int i;
     my_matrix_t *A = va_arg(args, my_matrix_t*);
-    unsigned int baseM = A->m;
-    unsigned int baseN = A->n;
-    for (i = 0; i < count-1; i++) {
+    uint32_t baseM = A->m;
+    uint32_t baseN = A->n;
+    for (uint32_t i = 0; i < count-1; i++) {
         A = va_arg(args, my_matrix_t *);
         if ((A->m != baseM && A->m != 1) || (A->n != baseN && A->n != 1))
-            return 1;
+            return my_false;
     }
-    return 0;
+    return my_true;
 }
 
 static void multiply(my_matrix_t *result, my_matrix_t *A)
