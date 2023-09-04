@@ -13,13 +13,11 @@ static void identity(my_matrix_t *A)
         my_matrix_set(A, i, i, 1);
 }
 
-void my_matrix_identity(const unsigned int count, ...)
+void my_matrix_identity(uint32_t const count, ...)
 {
-    unsigned int i;
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         identity(A);
     }
