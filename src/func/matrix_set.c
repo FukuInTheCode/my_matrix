@@ -1,7 +1,7 @@
 #include "../../includes/my.h"
 
-void my_matrix_set(my_matrix_t *A, const unsigned int x, \
-    const unsigned int y, const double n)
+void my_matrix_set(my_matrix_t *A, uint32_t const x,\
+                        uint32_t const y, double const  n)
 {
     if (x > A->n || y > A->m) return;
 
