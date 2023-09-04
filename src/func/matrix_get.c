@@ -6,10 +6,9 @@ double *my_matrix_getrow(my_matrix_t *A, unsigned int i)
     return A->arr[i];
 }
 
-void my_matrix_getcolumn(my_matrix_t *A, unsigned int n, double result[])
+void my_matrix_getcolumn(my_matrix_t *A, uint32_t n, double result[])
 {
-    unsigned int i;
-    for (i = 0; i < A->m; i++)
+    for (uint32_t i = 0; i < A->m; i++)
         result[i] = A->arr[i][n];
 }
 
