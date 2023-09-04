@@ -1,4 +1,5 @@
 #define MATRIX_CHECK_ALLOC
+#define MATRIX_INIT_STR
 #include "../../includes/my.h"
 
 static void create(my_matrix_t *A, uint32_t m, uint32_t n)
