@@ -28,13 +28,13 @@ static void multiply(my_matrix_t *result, my_matrix_t *A)
 }
 
 void my_matrix_product_elementwise(my_matrix_t *result, \
-    const unsigned int count, ...)
+    uint32_t const count, ...)
 {
     va_list args;
     va_list args_copy;
     va_copy(args_copy, args);
     va_start(args_copy, count);
-    if (multiplication_is_valid(args_copy, count) == 1) {
+    if (multiplication_is_valid(args_copy, count) == my_false) {
         va_end(args_copy);
         return;
     }
@@ -42,8 +42,7 @@ void my_matrix_product_elementwise(my_matrix_t *result, \
     va_start(args, count);
     my_matrix_t *A = va_arg(args, my_matrix_t*);
     my_matrix_copy(A, result);
-    unsigned int i;
-    for (i = 0; i < (count-1); i++) {
+    for (uint32_t i = 0; i < (count - 1); i++) {
         A = va_arg(args, my_matrix_t*);
         multiply(result, A);
     }
