@@ -13,13 +13,12 @@ void my_matrix_inverse(my_matrix_t *A, my_matrix_t *result)
         return;
     }
 
-    my_matrix_t Adjoint = {.m = 0, .n = 0};
+    MAT_DECLA(adjoint);
+    my_matrix_adjugate(A, &adjoint);
 
-    my_matrix_adjugate(A, &Adjoint);
+    my_matrix_multiplybyscalar(&adjoint, 1 / det, result);
 
-    my_matrix_multiplybyscalar(&Adjoint, 1 / det, result);
-
-    my_matrix_free(1, &Adjoint);
+    MAT_FREE(adjoint);
 }
 
 void my_matrix_inverse_2(my_matrix_t *A)
