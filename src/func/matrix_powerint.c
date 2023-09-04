@@ -20,7 +20,7 @@ void my_matrix_powerint(my_matrix_t *A, uint32_t const n, my_matrix_t *result)
     MAT_FREE(copy);
 }
 
-void my_matrix_powerint_2(my_matrix_t *A, const unsigned int n)
+void my_matrix_powerint_2(my_matrix_t *A, uint32_t const n)
 {
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
