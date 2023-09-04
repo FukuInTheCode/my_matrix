@@ -11,14 +11,12 @@ static void set_randfloat(my_matrix_t *A, double minN, double maxN)
     }
 }
 
-void my_matrix_randfloat(const double minN, const double maxN,\
-    const unsigned int count, ...)
+void my_matrix_randfloat(double const minN, double const maxN,\
+    uint32_t const count, ...)
 {
-    unsigned int i;
-
     va_list args;
     va_start(args, count);
-    for (i = 0; i < count; i++) {
+    for (uint32_t i = 0; i < count; i++) {
         my_matrix_t *A = va_arg(args, my_matrix_t *);
         set_randfloat(A, minN, maxN);
     }
