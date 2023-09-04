@@ -25,12 +25,10 @@ void my_matrix_randfloat(const double minN, const double maxN,\
     va_end(args);
 }
 
-static void set_randint(my_matrix_t *A, const int minN, const int maxN)
+static void set_randint(my_matrix_t *A, int const minN, int const maxN)
 {
-    unsigned int i;
-    unsigned int j;
-    for (i = 0; i < A->m; i++) {
-        for (j = 0; j < A->n; j++)
+    for (uint32_t i = 0; i < A->m; i++) {
+        for (uint32_t j = 0; j < A->n; j++)
             my_matrix_set(A, j, i, my_randint(minN, maxN));
     }
 }
