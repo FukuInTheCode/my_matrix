@@ -1,23 +1,15 @@
+#define MATRIX_CHECK_ALLOC
 #include "../../includes/my.h"
 
-static void create(my_matrix_t *A, unsigned int m, unsigned int n)
+static void create(my_matrix_t *A, uint32_t m, uint32_t n)
 {
-    unsigned int i;
-
     A->m = m;
     A->n = n;
     A->arr = malloc(m * sizeof(double *));
-
-    if (A->arr == NULL) {
-        fprintf(stderr, "Memory allocation failed.\n");
-        exit(1);
-    }
-    for (i = 0; i < m; i++) {
+    check_alloc(A->arr);
+    for (uint32_t i = 0; i < m; i++) {
         A->arr[i] = calloc(n, sizeof(double));
-        if (A->arr[i] == NULL) {
-            fprintf(stderr, "Memory allocation failed.\n");
-            exit(1);
-        }
+        check_alloc(A->arr[i]);
     }
 }
 
