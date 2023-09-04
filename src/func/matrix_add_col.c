@@ -25,5 +25,5 @@ void my_matrix_addcol_2(my_matrix_t *A, const uint32_t n)
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
     my_matrix_addcol(&cpy, n, A);
-    MAT_FREE(cpy);
+    MAT_FREE(&cpy);
 }

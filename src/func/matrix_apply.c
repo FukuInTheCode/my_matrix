@@ -1,6 +1,6 @@
 #include "../../includes/my.h"
 
-void my_matrix_applyfunc(my_matrix_t *A, UnaryFunction func, my_matrix_t *result)
+void my_matrix_applyfunc(my_matrix_t *A, temp_func func, my_matrix_t *result)
 {
     unsigned int i;
     unsigned int j;
@@ -14,7 +14,7 @@ void my_matrix_applyfunc(my_matrix_t *A, UnaryFunction func, my_matrix_t *result
     }
 }
 
-void my_matrix_applyfunc_2(my_matrix_t *A, UnaryFunction func)
+void my_matrix_applyfunc_2(my_matrix_t *A, temp_func func)
 {
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
