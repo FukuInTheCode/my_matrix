@@ -2,11 +2,9 @@
 
 void my_matrix_transpose(my_matrix_t *A, my_matrix_t *T)
 {
-    unsigned int i, j;
-
     my_matrix_create(A->n, A->m, 1, T);
-    for (i = 0; i < T->m; i++) {
-        for (j = 0; j < T->n; j++) {
+    for (uint32_t i = 0; i < T->m; i++) {
+        for (uint32_t j = 0; j < T->n; j++) {
             T->arr[i][j] = A->arr[j][i];
         }
     }
