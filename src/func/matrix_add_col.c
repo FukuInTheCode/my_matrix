@@ -17,7 +17,7 @@ void my_matrix_addcol(my_matrix_t *A, uint32_t const n, my_matrix_t *result)
     }
 }
 
-void my_matrix_addcol_2(my_matrix_t *A, const uint32_t n)
+void my_matrix_addcol_2(my_matrix_t *A, uint32_t const n)
 {
     MAT_DECLA(cpy);
     my_matrix_copy(A, &cpy);
