@@ -15,7 +15,7 @@ void my_matrix_adjugate(my_matrix_t *A, my_matrix_t *result)
             MAT_DECLA(sub);
             my_matrix_getsubmatrix(A, i, j, &sub);
             double cofactor = my_power(-1, i+j) * my_matrix_det(&sub);
-            my_matrix_set(result, i, j, cofactor);
+            my_matrix_set(result, j, i, cofactor);
             MAT_FREE(sub);
         }
     }
