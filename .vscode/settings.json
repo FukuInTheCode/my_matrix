@@ -10,7 +10,8 @@
         "my_matrix.h": "c",
         "typeinfo": "c",
         "cmath": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "string.h": "c"
     },
     "epilinter.tokenizer_address": "ws://54.36.183.139:8081"
 }
