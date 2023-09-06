@@ -9,7 +9,11 @@ int main(int argc, char* argv[])
 
     my_matrix_create_array(&arr, "Bite", 3, 1, 1, 2, 2, 3, 3);
 
-    
+    my_matrix_print_array(&arr, 3);
+
+    my_matrix_copy_array(&arr, &cpy, 3, "zizi");
+
+    my_matrix_print_array(&cpy, 3);
 
     return 0;
 }

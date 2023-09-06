@@ -18,6 +18,8 @@ void my_matrix_copy_array(my_matrix_t **arr, my_matrix_t **copy,\
     *copy = malloc(size * sizeof(my_matrix_t));
     check_alloc(*copy);
     for (uint32_t i = 0; i < size; ++i) {
+        (*copy)[i].m = 0;
+        (*copy)[i].n = 0;
         my_matrix_copy(&((*arr)[i]), &((*copy)[i]));
         (*copy)[i].name = init_str(common_name, i);
     }
