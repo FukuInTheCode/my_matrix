@@ -5,7 +5,7 @@ static void identity(my_matrix_t *A)
     if (A->m != A->n) return;
     for (uint32_t i = 0; i < A->m; i++) {
         for (uint32_t j = 0; j < A->n; j++)
-            my_matrix_set(A, j, i, 0);
+            my_matrix_set(A, i, j, 0);
     }
     for (uint32_t i = 0; i < A->m; i++)
         my_matrix_set(A, i, i, 1);
