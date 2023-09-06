@@ -1,9 +1,9 @@
 #include "../../includes/my.h"
 
-void my_matrix_set(my_matrix_t *A, uint32_t const x,\
-                        uint32_t const y, double const  n)
+void my_matrix_set(my_matrix_t *A, uint32_t const m,\
+                        uint32_t const n, double const  x)
 {
-    if (x > A->n || y > A->m) return;
+    if (n > A->n || m > A->m) return;
 
-    A->arr[y][x] = n;
+    A->arr[m][n] = x;
 }
