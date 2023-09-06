@@ -12,7 +12,8 @@ void my_matrix_copy(my_matrix_t *A, my_matrix_t *copy)
     }
 }
 
-void my_matrix_copy_array(my_matrix_t **arr, my_matrix_t **copy, uint32_t size, char *common_name)
+void my_matrix_copy_array(my_matrix_t **arr, my_matrix_t **copy,\
+                                    uint32_t size, char *common_name)
 {
     *copy = malloc(size * sizeof(my_matrix_t));
     check_alloc(*copy);
