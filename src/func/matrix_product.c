@@ -24,7 +24,7 @@ static void my_product(my_matrix_t *A, my_matrix_t *B, my_matrix_t *result)
         for (uint32_t j = 0; j < result->n; j++) {
             double column[B->m];
             my_matrix_getcolumn(B, j, column);
-            my_matrix_set(result, j, i, my_dot_product(row, column, A->n));
+            my_matrix_set(result, i, j, my_dot_product(row, column, A->n));
         }
     }
 }
