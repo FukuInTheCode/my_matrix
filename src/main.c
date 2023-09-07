@@ -10,9 +10,14 @@ int main(int argc, char* argv[])
     MAT_DECLA(yy);
 
     my_matrix_linspace(&x, 0, 5, 6);
-    my_matrix_linspace(&y, 6, 11, 6);
+    my_matrix_linspace(&y, 6, 11, 7);
 
-    my_matrix_meshgrid(&x, &y, &xx, &yy);
+    my_matrix_meshgrid_2(&x, &y);
+
+    my_matrix_transform_2(&x, 42, 1);
+    my_matrix_transform_2(&y, 42, 1);
+
+    my_matrix_concatcol(&xx, &x, &y);
 
     MAT_PRINT(x);
     MAT_PRINT(y);
