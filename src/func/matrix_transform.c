@@ -5,8 +5,15 @@ void my_matrix_transform(my_matrix_t *A, uint32_t m,\
 {
     if (m * n != A->m * A->n) return;
     my_matrix_create(m, n, 1, result);
+    uint32_t i2 = 0;
+    uint32_t j2 = 0;
     for (uint32_t i = 0; i < m; ++i) {
-        for (uint32_t j = 0; j < n; ++j)
-            my_matrix_set(result, i, j, A->arr[(i + j) / A->m][(i + j) % A->m]);
+        for (uint32_t j = 0; j < n; ++j) {
+            printf("%u, %u\n", i2, j2);
+            my_matrix_set(result, i, j, A->arr[i2][j2]);
+            j2++;
+            i2 += (j2 == A->n);
+            j2 *= (j2 != A->n);
+        }
     }
 }
