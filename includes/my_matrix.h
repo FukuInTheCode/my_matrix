@@ -3,7 +3,7 @@
 
 #include "./my_math.h"
 
-//  TODO add linspace / meshgrid / ravel
+//  TODO add meshgrid / ravel
 
 #define FALSE 0
 
