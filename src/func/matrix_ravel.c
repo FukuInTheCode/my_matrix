@@ -9,3 +9,11 @@ void my_matrix_ravel(my_matrix_t *A, my_matrix_t *result)
             my_matrix_set(result, 0, i * A->n + j, A->arr[i][j]);
     }
 }
+
+void my_matrix_ravel_2(my_matrix_t *A)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_ravel(&cpy, A);
+    MAT_FREE(cpy);
+}
