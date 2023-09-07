@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     my_matrix_randint(0, 10, 1, &A);
 
     my_matrix_transform(&A, 2, 6, &B);
-    my_matrix_transform(&A, 3, 4, &C);
+    my_matrix_ravel(&A, &C);
 
     MAT_PRINT(A);
     MAT_PRINT(B);
