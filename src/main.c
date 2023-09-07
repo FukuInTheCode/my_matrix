@@ -4,24 +4,25 @@ int main(int argc, char* argv[])
 {
     srand(69);
 
-    MAT_DECLA(A);
-    MAT_DECLA(B);
-    MAT_DECLA(C);
+    MAT_DECLA(x);
+    MAT_DECLA(y);
+    MAT_DECLA(xx);
+    MAT_DECLA(yy);
 
-    // my_matrix_linspace(&A, -10, 10, 21);
-    my_matrix_create(4, 3, 1, &A);
-    my_matrix_randint(0, 10, 1, &A);
+    my_matrix_linspace(&x, 0, 5, 6);
+    my_matrix_linspace(&y, 6, 11, 6);
 
-    my_matrix_transform(&A, 12, 1, &B);
-    my_matrix_ravel(&A, &C);
+    my_matrix_meshgrid(&x, &y, &xx, &yy);
 
-    MAT_PRINT(A);
-    MAT_PRINT(B);
-    MAT_PRINT(C);
+    MAT_PRINT(x);
+    MAT_PRINT(y);
+    MAT_PRINT(xx);
+    MAT_PRINT(yy);
 
-    MAT_FREE(A);
-    MAT_FREE(B);
-    MAT_FREE(C);
+    MAT_FREE(x);
+    MAT_FREE(y);
+    MAT_FREE(xx);
+    MAT_FREE(yy);
 
     return 0;
 }
