@@ -17,3 +17,11 @@ void my_matrix_transform(my_matrix_t *A, uint32_t m,\
         }
     }
 }
+
+void my_matrix_transform_2(my_matrix_t *A, uint32_t m, uint32_t n)
+{
+    MAT_DECLA(cpy);
+    my_matrix_copy(A, &cpy);
+    my_matrix_transform(&cpy, m, n, A);
+    MAT_FREE(cpy);
+}
