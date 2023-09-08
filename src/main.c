@@ -9,17 +9,17 @@ int main(int argc, char* argv[])
     MAT_DECLA(xx);
     MAT_DECLA(yy);
 
-    my_matrix_linspace(&x, 0, 5, 6);
-    my_matrix_linspace(&y, 6, 11, 7);
+    double arr[12];
+    my_matrix_create(3, 4, 1, &x);
+    my_matrix_randfloat(-10, 10, 1, &x);
 
-    my_matrix_meshgrid_2(&x, &y);
-
-    my_matrix_transform_2(&x, 42, 1);
-    my_matrix_transform_2(&y, 42, 1);
-
-    my_matrix_concatcol(&xx, &x, &y);
-
+    my_matrix_to_array(&x, &arr);
     MAT_PRINT(x);
+
+    for (uint8_t i = 0; i < 12; ++i) {
+        printf("%lf\n", arr[i]);
+    }
+
     MAT_PRINT(y);
     MAT_PRINT(xx);
     MAT_PRINT(yy);
