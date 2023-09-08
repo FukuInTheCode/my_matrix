@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
     MAT_DECLA(xx);
     MAT_DECLA(yy);
 
-    double arr[12];
+    double *arr = malloc(sizeof(double) * 12);
     my_matrix_create(3, 4, 1, &x);
     my_matrix_randfloat(-10, 10, 1, &x);
 
