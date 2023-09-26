@@ -1,4 +1,4 @@
-#pragma once
+#ifndef MYMATRIXH
 #define MYMATRIXH
 
 #include "./my_math.h"
@@ -152,4 +152,6 @@ static inline __attribute__((always_inline)) void check_alloc(void *A)
         exit(1);
     }
 }
+#endif
+
 #endif
