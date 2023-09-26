@@ -3,8 +3,6 @@
 
 #include "./my_math.h"
 
-//  TODO add meshgrid
-
 #define FALSE 0
 
 #define TRUE 1
