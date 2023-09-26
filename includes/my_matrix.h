@@ -267,6 +267,22 @@ void my_matrix_broadcasting_2(my_matrix_t *A, uint32_t m, \
     my_matrix_broadcasting(&cpy, m, n, A);
     MAT_FREE(cpy);
 }
+
+void my_matrix_concatcol(my_matrix_t *result, my_matrix_t *A, my_matrix_t *B)
+{
+    if (A->m != B->m) return;
+    my_matrix_create(A->m, A->n + B->n, 1, result);
+
+    for (uint32_t i = 0; i < result->m; i++) {
+        for (uint32_t j = 0; j < A->n; j++) {
+            result->arr[i][j] = A->arr[i][j];
+        }
+        for (uint32_t j = A->n; j < result->n; j++) {
+            result->arr[i][j] = B->arr[i][j - A->n];
+        }
+    }
+}
+
 #endif
 
 #ifdef MATRIX_INIT_STR
